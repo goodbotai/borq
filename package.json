@@ -20,8 +20,6 @@
   "dependencies": {
     "botkit": "^0.5.6",
     "express-winston": "^2.4.0",
-    "i18next": "^8.4.3",
-    "i18next-node-fs-backend": "^1.0.0",
     "node-fetch": "^1.7.1",
     "raven": "^2.1.1",
     "uuid": "^3.1.0",

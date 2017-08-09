@@ -9,7 +9,7 @@ module.exports = {
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
   facebookAppSecret: env.FACEBOOK_APP_SECRET,
   facebookApiVersion: env.FACEBOOK_API_VERSION || 'v2.6',
-  facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'karma', // webhook verification token
+  facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'karma',
 
   // external data stores
   onadataApiToken: env.ONADATA_API_TOKEN,

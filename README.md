@@ -15,6 +15,10 @@ $ yarn dev
  * [Installation](docs/Install.md)
  * [Testing](docs/Testing.md)
 
+Generate JS Doc HTML documentation `yarn docs` which is an alias
+ for `./node_modules/jsdoc/jsdoc.js -c js-doc.json`.
+
+Outputs html docs in `docs/html/`.
 
 # License
 [BSD-2-Clause](LICENSE)
