@@ -5,7 +5,8 @@
   "main": "lib/Borq.js",
   "scripts": {
     "lint": "./node_modules/.bin/eslint index.js lib config examples",
-    "dev": "supervisor index.js"
+    "dev": "supervisor index.js",
+    "docs": "jsdoc -c js-doc.json"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   "devDependencies": {
     "eslint": "^4.4.0",
     "eslint-config-google": "^0.9.1",
+    "jsdoc": "^3.5.4",
     "supervisor": "^0.12.0"
   }
 }
