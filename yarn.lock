@@ -137,23 +137,23 @@
     envify "^3.4.1"
     lodash "^4.17.4"
 
-"@ciscospark/plugin-people@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@ciscospark/plugin-people/-/plugin-people-1.9.1.tgz#ce93385303461ec8c8b28b7676cc63700756f107"
+"@ciscospark/plugin-people@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@ciscospark/plugin-people/-/plugin-people-1.8.0.tgz#168d3836766a4a3fbbca9572186aeb9d9cedc783"
   dependencies:
     "@ciscospark/common" "1.8.0"
     "@ciscospark/spark-core" "1.8.0"
     babel-runtime "^6.23.0"
     envify "^3.4.1"
 
-"@ciscospark/plugin-phone@1.9.1":
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/@ciscospark/plugin-phone/-/plugin-phone-1.9.1.tgz#5568e2f1c146aa0799fa73dcae4f11195ff82953"
+"@ciscospark/plugin-phone@1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@ciscospark/plugin-phone/-/plugin-phone-1.8.0.tgz#0ff2a7b9b310e712d59ba9d3e7157a76a50b87a3"
   dependencies:
     "@ciscospark/common" "1.8.0"
     "@ciscospark/internal-plugin-locus" "1.8.0"
     "@ciscospark/internal-plugin-metrics" "1.8.0"
-    "@ciscospark/plugin-people" "1.9.1"
+    "@ciscospark/plugin-people" "1.8.0"
     "@ciscospark/spark-core" "1.8.0"
     ampersand-state "^5.0.2"
     babel-runtime "^6.23.0"
@@ -319,6 +319,12 @@ array-back@^1.0.3, array-back@^1.0.4:
   dependencies:
     typical "^2.6.0"
 
+array-back@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/array-back/-/array-back-2.0.0.tgz#6877471d51ecc9c9bfa6136fb6c7d5fe69748022"
+  dependencies:
+    typical "^2.6.1"
+
 array-flatten@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/array-flatten/-/array-flatten-1.1.1.tgz#9a5f699051b1e7073328f2a008968b64ea2955d2"
@@ -392,27 +398,27 @@ aws4@^1.2.1:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
 
 babel-code-frame@^6.22.0:
-  version "6.22.0"
-  resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.22.0.tgz#027620bee567a88c32561574e7fd0801d33118e4"
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
   dependencies:
-    chalk "^1.1.0"
+    chalk "^1.1.3"
     esutils "^2.0.2"
-    js-tokens "^3.0.0"
+    js-tokens "^3.0.2"
 
 babel-polyfill@^6.23.0:
-  version "6.23.0"
-  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
   dependencies:
-    babel-runtime "^6.22.0"
-    core-js "^2.4.0"
-    regenerator-runtime "^0.10.0"
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
 
-babel-runtime@^6.22.0, babel-runtime@^6.23.0:
-  version "6.25.0"
-  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.25.0.tgz#33b98eaa5d482bb01a8d1aa6b437ad2b01aec41c"
+babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+  version "6.26.0"
+  resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
   dependencies:
     core-js "^2.4.0"
-    regenerator-runtime "^0.10.0"
+    regenerator-runtime "^0.11.0"
 
 babylon@~7.0.0-beta.19:
   version "7.0.0-beta.19"
@@ -511,16 +517,16 @@ botkit-studio-sdk@^1.0.2:
     promise "^7.1.1"
     request "^2.67.0"
 
-botkit@^0.5.6:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/botkit/-/botkit-0.5.6.tgz#95ea1e4fa4c77ce0182b40a07eadccb72171c1c5"
+botkit@^0.5.6, botkit@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/botkit/-/botkit-0.5.7.tgz#e85281af622bcfdb9702fddcf032844a41084ec7"
   dependencies:
     async "^2.1.5"
     back "^1.0.1"
     body-parser "^1.17.1"
     botbuilder "^3.7.0"
     botkit-studio-sdk "^1.0.2"
-    ciscospark "^1.1.6"
+    ciscospark "1.8.0"
     clone "2.1.1"
     command-line-args "^4.0.2"
     crypto "0.0.3"
@@ -579,7 +585,7 @@ catharsis@~0.8.9:
   dependencies:
     underscore-contrib "~0.3.0"
 
-chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
+chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
   dependencies:
@@ -619,15 +625,15 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
-ciscospark@^1.1.6:
-  version "1.9.1"
-  resolved "https://registry.yarnpkg.com/ciscospark/-/ciscospark-1.9.1.tgz#a3d8bb555d2d3d28e7149be63fa4032a1dde38e1"
+ciscospark@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/ciscospark/-/ciscospark-1.8.0.tgz#dec0a986d714d737cb221525972024c5cab4a26b"
   dependencies:
     "@ciscospark/internal-plugin-wdm" "1.8.0"
     "@ciscospark/plugin-authorization" "1.8.0"
     "@ciscospark/plugin-logger" "1.8.0"
-    "@ciscospark/plugin-people" "1.9.1"
-    "@ciscospark/plugin-phone" "1.9.1"
+    "@ciscospark/plugin-people" "1.8.0"
+    "@ciscospark/plugin-phone" "1.8.0"
     "@ciscospark/spark-core" "1.8.0"
     "@ciscospark/storage-adapter-local-storage" "1.8.0"
     babel-polyfill "^6.23.0"
@@ -694,10 +700,10 @@ combined-stream@^1.0.5, combined-stream@~1.0.5:
     delayed-stream "~1.0.0"
 
 command-line-args@^4.0.2:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/command-line-args/-/command-line-args-4.0.6.tgz#0ff87a1dd159890dcaeb2a005abdae71e55059fc"
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/command-line-args/-/command-line-args-4.0.7.tgz#f8d1916ecb90e9e121eda6428e41300bfb64cc46"
   dependencies:
-    array-back "^1.0.4"
+    array-back "^2.0.0"
     find-replace "^1.0.3"
     typical "^2.6.1"
 
@@ -751,7 +757,7 @@ core-decorators@^0.14.0:
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/core-decorators/-/core-decorators-0.14.0.tgz#13a14718518a5fc7cc623b3f0f4af879eed7f1cf"
 
-core-js@^2.4.0:
+core-js@^2.4.0, core-js@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.5.0.tgz#569c050918be6486b3837552028ae0466b717086"
 
@@ -929,8 +935,8 @@ eslint-scope@^3.7.1:
     estraverse "^4.1.1"
 
 eslint@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.4.0.tgz#a3e153e704b64f78290ef03592494eaba228d3bc"
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.4.1.tgz#99cd7eafcffca2ff99a5c8f5f2a474d6364b4bd3"
   dependencies:
     ajv "^5.2.0"
     babel-code-frame "^6.22.0"
@@ -1300,8 +1306,8 @@ http-signature@~1.1.0:
     sshpk "^1.7.0"
 
 https-proxy-agent@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.0.0.tgz#ffaa4b6faf586ac340c18a140431e76b7d7f2944"
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.1.0.tgz#1391bee7fd66aeabc0df2a1fa90f58954f43e443"
   dependencies:
     agent-base "^4.1.0"
     debug "^2.4.1"
@@ -1463,7 +1469,7 @@ joi@^6.10.1:
     moment "2.x.x"
     topo "1.x.x"
 
-js-tokens@^3.0.0:
+js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
@@ -1732,8 +1738,8 @@ negotiator@0.6.1:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
 node-fetch@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.1.tgz#899cb3d0a3c92f952c47f1b876f4c8aeabd400d5"
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-1.7.2.tgz#c54e9aac57e432875233525f3c891c4159ffefd7"
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
@@ -1930,8 +1936,8 @@ range-parser@~1.2.0:
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
 raven@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/raven/-/raven-2.1.1.tgz#b3a974c6c29315c677c079e168435ead196525cd"
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/raven/-/raven-2.1.2.tgz#4aa7a72c4b3061d7fde06bfc62d669a74a651e27"
   dependencies:
     cookie "0.3.1"
     json-stringify-safe "5.0.1"
@@ -1989,9 +1995,13 @@ recast@^0.11.17:
     private "~0.1.5"
     source-map "~0.5.0"
 
-regenerator-runtime@^0.10.0:
+regenerator-runtime@^0.10.5:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+
+regenerator-runtime@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
 
 request@2.74.x:
   version "2.74.0"
@@ -2096,13 +2106,13 @@ rx-lite@*, rx-lite@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/rx-lite/-/rx-lite-4.0.8.tgz#0b1e11af8bc44836f04a6407e92da42467b79444"
 
-safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
-
-safe-buffer@~5.0.1:
+safe-buffer@^5.0.1, safe-buffer@~5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
+
+safe-buffer@~5.1.0, safe-buffer@~5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
 scmp@0.0.3:
   version "0.0.3"
