@@ -7,20 +7,21 @@ in development or production.
 
 |     Environment variable     |         Default         |
 |:----------------------------:|:-----------------------:|
-|      NODE_ENV                |          'dev'          |
-|      HOST_PORT (docker)      |        undefined        |
-|      APP_PORT (docker)       |          3000           |
-|      PORT                    |          3000           |
-|      ONADATA_API_TOKEN       |        undefined        |
-|      RAPIDPRO_API_TOKEN      |        undefined        |
-|      RAPIDPRO_GROUPS         |            []           |
-|      SENTRY_DSN              |        undefined        |
-|      KARMA_ACCESS_LOG_FILE   | ./logs/karma_access.log |
-|      DEBUG_TRANSLATIONS      |           false         |
-|   FACEBOOK_PAGE_ACCESS_TOKEN |          'karma'        |
-|   FACEBOOK_VERIFY_TOKEN      |         undefined       |
-|   FACEBOOK_APP_SECRET        |         undefined       |
-|   FACEBOOK_API_VERSION       |           'v2.6'        |
+|NODE_ENV                      |'dev'                    |
+|LANGUAGE (ISO 639-1 Code)     |'en'                     |
+|HOST_PORT (docker)            |undefined                |
+|APP_PORT (docker)             |3000                     |
+|PORT                          |3000                     |
+|ONADATA_API_TOKEN             |undefined                |
+|RAPIDPRO_API_TOKEN            |undefined                |
+|RAPIDPRO_GROUPS               |[]                       |
+|SENTRY_DSN                    |undefined                |
+|KARMA_ACCESS_LOG_FILE         |./logs/karma_access.log  |
+|DEBUG_TRANSLATIONS            |false                    |
+|FACEBOOK_PAGE_ACCESS_TOKEN    |'karma'                  |
+|FACEBOOK_VERIFY_TOKEN         |undefined                |
+|FACEBOOK_APP_SECRET           |undefined                |
+|FACEBOOK_API_VERSION          |'v2.6'                   |
 
 
 ### Using docker
