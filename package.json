@@ -1,6 +1,6 @@
 {
   "name": "borq",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.4",
   "description": "Bot orchestration framework",
   "main": "lib/Borq.js",
   "scripts": {
@@ -10,16 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/onaio/borq.git"
+    "url": "git+ssh://git@github.com/goodbotai/borq.git"
   },
-  "author": "onaio",
+  "author": "goodbotai",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/onaio/borq/issues"
+    "url": "https://github.com/goodbotai/borq/issues"
   },
-  "homepage": "https://github.com/onaio/borq",
+  "homepage": "https://github.com/goodbotai/borq",
   "dependencies": {
-    "botkit": "^0.5.6",
+    "borq": "^0.0.1-alpha.2",
+    "botkit": "^0.5.7",
     "express-winston": "^2.4.0",
     "node-fetch": "^1.7.1",
     "raven": "^2.1.1",

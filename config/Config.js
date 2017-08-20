@@ -4,6 +4,7 @@ module.exports = {
   // core
   environment: env.NODE_ENV || 'development', // dev, prod, test
   PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
+  defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
 
   // facebook
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
