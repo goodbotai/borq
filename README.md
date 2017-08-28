@@ -13,7 +13,9 @@ $ yarn dev
 
 ## Documentation
  * [Installation](docs/Install.md)
+ * [Persistence](docs/Persistence.md)
  * [Testing](docs/Testing.md)
+
 
 Generate JS Doc HTML documentation `yarn docs` which is an alias
  for `./node_modules/jsdoc/jsdoc.js -c js-doc.json`.
