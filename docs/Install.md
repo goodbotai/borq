@@ -20,6 +20,7 @@ in development or production.
 |DEBUG_TRANSLATIONS                |false                    |
 |FACEBOOK_VERIFY_TOKEN             |'karma'                  |
 |FACEBOOK_APP_SECRET               |undefined                |
+|CONVERSATION_TIMEOUT              |120000                   |
 |FACEBOOK_PAGE_ACCESS_TOKEN        |undefined                |
 |FACEBOOK_API_VERSION              |'v2.6'                   |
 
