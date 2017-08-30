@@ -5,6 +5,7 @@ module.exports = {
   environment: env.NODE_ENV || 'development', // dev, prod, test
   PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
   defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
+  conversationTimeout: env.CONVERSATION_TIMEOUT || 120000,
 
   // facebook
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
@@ -19,6 +20,6 @@ module.exports = {
 
   // logging and error reporting
   sentryDSN: env.SENTRY_DSN,
-  karmaAccessLogFile: env.KARMA_ACCESS_LOG_FILE || './logs/karma_access.log',
+  karmaAccessLogFile: env.KARMA_ACCESS_LOG_FILE || 'bot.access.log',
   debugTranslations: env.DEBUG_TRANSLATIONS === 'true' || false,
 };

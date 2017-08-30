@@ -16,11 +16,11 @@ in development or production.
 |RAPIDPRO_API_TOKEN                |undefined                |
 |RAPIDPRO_GROUPS                   |[]                       |
 |SENTRY_DSN                        |undefined                |
-|KARMA_ACCESS_LOG_FILE             |./logs/karma_access.log  |
+|KARMA_ACCESS_LOG_FILE             |bot.access.log           |
 |DEBUG_TRANSLATIONS                |false                    |
-|FACEBOOK_PAGE_ACCESS_TOKEN        |'karma'                  |
-|FACEBOOK_VERIFY_TOKEN             |undefined                |
+|FACEBOOK_VERIFY_TOKEN             |'karma'                  |
 |FACEBOOK_APP_SECRET               |undefined                |
+|FACEBOOK_PAGE_ACCESS_TOKEN        |undefined                |
 |FACEBOOK_API_VERSION              |'v2.6'                   |
 
 
