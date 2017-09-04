@@ -1,38 +1,15 @@
+# Global
+Check out the docs on the required [Environment variables](docs/Env.md).
+
 # Production
 
-### Environment variables
-
-You will want to set at least some these env vars before running Karma either
-in development or production.
-
-|        Environment variable      |         Descpription      |         Default         |
-|:--------------------------------:|:-------------------------:|:-----------------------:|
-|NODE_ENV                          |                           |'dev'                    |
-|DEAFULT_LANGUAGE (ISO 639-1 Code) |                           |'en'                     |
-|HOST_PORT (docker)                |                           |undefined                |
-|APP_PORT (docker)                 |                           |3000                     |
-|PORT                              |                           |3000                     |
-|ONA_ORG                           |Ona organization name      |undefined                |
-|ONADATA_API_TOKEN                 |                           |undefined                |
-|RAPIDPRO_API_TOKEN                |                           |undefined                |
-|RAPIDPRO_GROUPS                   |                           |[]                       |
-|SENTRY_DSN                        |                           |undefined                |
-|KARMA_ACCESS_LOG_FILE             |                           |bot.access.log           |
-|DEBUG_TRANSLATIONS                |                           |false                    |
-|FACEBOOK_VERIFY_TOKEN             |                           |'karma'                  |
-|FACEBOOK_APP_SECRET               |                           |undefined                |
-|CONVERSATION_TIMEOUT              |                           |120000                   |
-|FACEBOOK_PAGE_ACCESS_TOKEN        |                           |undefined                |
-|FACEBOOK_API_VERSION              |                           |'v2.10'                  |
-
-
-### Using docker
+## Using docker
 
 ```
 $ docker-compose up -d
 ```
 
-### Without docker
+## Without docker
 `HOST_PORT` and `APP_PORT` environment variables are only needed for docker.
 When not using docker you can fail to set `PORT` and let it default to 3000
 or set `PORT` to a different value.
