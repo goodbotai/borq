@@ -15,7 +15,7 @@ module.exports = {
 
   // external data stores
   onaOrg: env.ONA_USERNAME,
-  onadataApiToken: env.ONADATA_API_TOKEN,
+  onaApiToken: env.ONA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
   rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : [],
 
