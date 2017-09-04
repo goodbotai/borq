@@ -14,6 +14,7 @@ module.exports = {
   facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'karma',
 
   // external data stores
+  onaOrg: env.ONA_ORG,
   onadataApiToken: env.ONADATA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
   rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : [],
