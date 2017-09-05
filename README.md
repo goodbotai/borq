@@ -13,6 +13,8 @@ $ yarn dev
 
 ## Documentation
  * [Installation](docs/Install.md)
+ * [Environment variables](docs/Env.md)
+ * [Persistence](docs/Persistence.md)
  * [Testing](docs/Testing.md)
 
 Generate JS Doc HTML documentation `yarn docs` which is an alias
