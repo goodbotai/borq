@@ -1,6 +1,9 @@
 #!/bin/bash
 rm -rf docs/html/ || exit 0;
+echo "Generating docs"
 jsdoc -c js-doc.json
+
+echo "Preparing to push docs to github"
 ( cd docs/html/
  git init
  git config user.name "Njagi Mwaniki"
