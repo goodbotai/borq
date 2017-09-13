@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "./node_modules/.bin/eslint index.js lib config examples",
     "dev": "supervisor index.js",
-    "docs": "./node_modules/.bin/jsdoc -c js-doc.json",
+    "docs": "jsdoc -c js-doc.json",
     "deploy-docs": "./.deploy-ghpages.sh"
   },
   "repository": {

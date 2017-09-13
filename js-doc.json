@@ -5,5 +5,11 @@
     "include": ["lib/", "config/"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
-  }
+  },
+   "opts": {
+    "template": "templates/default",
+    "encoding": "utf8",
+    "destination": "./docs/html/",
+    "recurse": true
+}
 }
