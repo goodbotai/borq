@@ -16,6 +16,7 @@ $ yarn dev
  * [Environment variables](docs/Env.md)
  * [Persistence](docs/Persistence.md)
  * [Testing](docs/Testing.md)
+ * [API Docs](https://goodbotai.github.io/borq)
 
 Generate JS Doc HTML documentation `yarn docs` which is an alias
  for `./node_modules/jsdoc/jsdoc.js -c js-doc.json`.
