@@ -5,7 +5,9 @@ module.exports = {
   environment: env.NODE_ENV || 'development', // dev, prod, test
   PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
   defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
-  conversationTimeout: env.CONVERSATION_TIMEOUT || 120000,
+
+  // milliseconds per min * number of mins
+  conversationTimeout: env.CONVERSATION_TIMEOUT || (60000 * 20),
 
   // facebook
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,

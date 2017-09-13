@@ -20,6 +20,6 @@ None of these vars is required by themselves but you need to set a few of
 |DEBUG_TRANSLATIONS                |Whether to turn off or on translations debugging                                                                                           |false                    |
 |FACEBOOK_VERIFY_TOKEN             |Token used to verify your app to the webhooks endpoint listens on /facebook/recieve                                                        |'borq'                   |
 |FACEBOOK_APP_SECRET               |Facebook provided app secret. Required for Messenger.                                                                                      |undefined                |
-|CONVERSATION_TIMEOUT              |Time to wait for a user to reply (in milliseconds).                                                                                        |120000                   |
+|CONVERSATION_TIMEOUT              |Time to wait for a user to respond (in milliseconds).                                                                                      |60000 * 20 (20 mins)     |
 |FACEBOOK_PAGE_ACCESS_TOKEN        |Facebook provided token needed to post as a page. Required for Messenger.                                                                  |undefined                |
 |FACEBOOK_API_VERSION              |The version of the facebook API to use when making Facebook API calls.                                                                     |'v2.10'                  |
