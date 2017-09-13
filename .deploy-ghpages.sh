@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Preparing to push docs to github"
-( cd docs/html/
+( cd out/
  git init
  git config user.name "Njagi Mwaniki"
  git config user.email "njagi@urbanslug.com"
