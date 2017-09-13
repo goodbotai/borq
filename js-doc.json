@@ -2,14 +2,14 @@
   "plugins": ["plugins/markdown"],
   "recurseDepth": 10,
   "source": {
-    "include": ["./lib/", "./config/"],
+    "include": ["lib/", "config/"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
   "opts": {
     "template": "templates/default",
     "encoding": "utf8",
-    "destination": "./docs/html/",
+    "destination": "docs/html/",
     "recurse": true
   }
 }
