@@ -1,11 +1,16 @@
 language: node_js
 node_js:
-  - "8"
-
+  - "8.4.0"
 
 install:
   - npm install --dev
-  - npm install travis-ecs-deploy -g
+  - npm install jsdoc -g
 
 script:
   - yarn lint
+  - yarn docs
+  - yarn deploy-docs
+
+env:
+ global:
+ - GH_REF: github.com/goodbotai/borq.git
