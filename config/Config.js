@@ -21,6 +21,8 @@ module.exports = {
   onaApiToken: env.ONA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
   rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : [],
+  deletedUserGroups:
+  env.DELETED_USER_GROUPS ? JSON.parse(env.DELETED_USER_GROUPS) : [],
 
   // logging and error reporting
   sentryDSN: env.SENTRY_DSN,
