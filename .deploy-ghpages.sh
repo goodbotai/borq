@@ -1,6 +1,7 @@
-#!/bin/bash
-if [ "${TRAVIS_BRANCH}" = "master" ]; then
-    echo "Generating an pushing docs to github pages"
+#!/bin/sh
+
+if [ "${TRAVIS_BRANCH}" == "master" ]; then
+    echo "Generating and pushing docs to github pages"
     cd docs/html/
     git init
     git config user.name "Travis CI"
