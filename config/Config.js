@@ -21,7 +21,7 @@ module.exports = {
   onaApiToken: env.ONA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
   rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : [],
-  deletedUserGroups:  env.DELETED_USER_RAPIDPRO_GROUPS ?
+  deletedUserGroups: env.DELETED_USER_RAPIDPRO_GROUPS ?
     JSON.parse(env.DELETED_USER_RAPIDPRO_GROUPS) :
     [],
 
