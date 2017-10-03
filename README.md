@@ -1,27 +1,61 @@
+[![NPM](https://nodei.co/npm/borq.png?downloads=true&stars=true)](https://nodei.co/npm/borq/)
+
+[![Build Status](https://travis-ci.org/goodbotai/borq.svg?branch=master)](https://travis-ci.org/goodbotai/borq)
+
 # Borq
-Bot orchestration framework
+Short for Bot Orchestration, borq is a Bot orchestration framework aimed at
+making it easy for people to make bots that have register users and manage them
+in RapidPro and save bot and user conversations in Ona.
 
 ## Target platforms
 Current:
  - Facebook messenger
 
+Todo:
+ - Telegram
+
 ## Run an example bot
-``` bash
-$ # set env vars
-$ yarn dev
+```javascript
+const borq = require('borq');
+
+const {
+  facebookUtils,
+  facebookBot,
+  services,
+  config,
+  http,
+  localeUtils,
+} = borq;
+
+const {
+  nextConversation,
+  goto,
+  generateButtonTemplate,
+  generateQuickReply,
+  sendMessage,
+} = facebookUtils;
+
+const bot = facebookBot.spawn({});
+
+facebookBot.hears(['hello'],
+                  'message_received',
+                  (bot, message) => {
+                    bot.reply(message, 'How\'s your day going?');
+});
+
+facebookBot.hears([/([a-z])\w+/gi],
+                  'message_received',
+                  function(bot, message) {
+                    bot.reply(message, 'I don\'t know that word yet');
+});
 ```
 
 ## Documentation
- * [Installation](docs/Install.md)
- * [Environment variables](docs/Env.md)
+ * [Deploying](docs/Deploying.md)
+ * [Environment variables](docs/Environment%20Variables.md)
  * [Persistence](docs/Persistence.md)
  * [Testing](docs/Testing.md)
  * [API Docs](https://goodbotai.github.io/borq)
-
-Generate JS Doc HTML documentation `yarn docs` which is an alias
- for `./node_modules/jsdoc/jsdoc.js -c js-doc.json`.
-
-Outputs html docs in `docs/html/`.
 
 # License
 [BSD-2-Clause](LICENSE)

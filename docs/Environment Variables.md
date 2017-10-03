@@ -29,7 +29,7 @@ None of these vars is required by themselves but you need to set a few of
 
 
 examples:
-```
-$ export DELETED_USER_RAPIDPRO_GROUPS='{"del": "68g77390-4hcd-4cf8-b985-da286e0790y36"}'
-$ export RAPIDPRO_GROUPS='{"in": "68g77390-4hcd-4cf8-b985-da286e0790y36", "br": "68g77390-4hcd-4cf8-b985-da286e0790y36"}'
+```bash
+$ export DELETED_USER_RAPIDPRO_GROUPS="{\"del\": \"l0ng-gr0up-n4m3-uu1d\"}"
+$ export RAPIDPRO_GROUPS="{\"ind\": \"l0ng-gr0up-n4m3-uu1d\", \"por\": \"l0ng-gr0up-n4m3-uu1d\", \"default\": \"l0ng-gr0up-n4m3-uu1d\"}"
 ```

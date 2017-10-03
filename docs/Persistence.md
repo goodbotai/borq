@@ -1,2 +1,2 @@
-Borq does no form of persistence.
-It depends on Rapidpro and Onadata to be its data stores.
+Bots built with borq perform no form of persistence.  
+They depends on Rapidpro and Ona to be its user and data stores respectively.
