@@ -20,10 +20,10 @@ module.exports = {
   onaFormIdString: env.ONA_FORM_ID_STRING,
   onaApiToken: env.ONA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
-  rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : [],
+  rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : {},
   deletedUserGroups: env.DELETED_USER_RAPIDPRO_GROUPS ?
     JSON.parse(env.DELETED_USER_RAPIDPRO_GROUPS) :
-    [],
+    {},
 
   // logging and error reporting
   sentryDSN: env.SENTRY_DSN,
