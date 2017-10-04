@@ -9,26 +9,9 @@
   "opts": {
     "readme": "README.md",
     "tutorials": "./docs",
-    "template": "./node_modules/ink-docstrap/template",
+    "template": "node_modules/minami",
     "encoding": "utf8",
     "destination": "./out",
     "recurse": true
-  },
-  "templates": {
-    "logoFile": "",
-    "cleverLinks": false,
-    "monospaceLinks": false,
-    "dateFormat": "ddd MMM Do YYYY",
-    "outputSourceFiles": true,
-    "outputSourcePath": true,
-    "systemName": "borq",
-    "theme": "yeti",
-    "footer": "",
-    "copyright": "",
-    "linenums": true,
-    "collapseSymbols": false,
-    "inverseNav": true,
-    "protocol": "html://",
-    "methodHeadingReturns": false
   }
 }

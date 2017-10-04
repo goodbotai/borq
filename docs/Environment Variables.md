@@ -1,7 +1,5 @@
-# Environment variables
-
 None of these vars is required by themselves but you need to set a few of
- them to create a functioning bot.
+them to create a functioning bot.
 
 |        Environment variable      |                                     Descpription                                           |         Default         |
 |:--------------------------------:|:------------------------------------------------------------------------------------------:|:-----------------------:|
