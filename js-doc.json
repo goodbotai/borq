@@ -9,7 +9,7 @@
   "opts": {
     "readme": "README.md",
     "tutorials": "./docs",
-    "template": "node_modules/minami",
+    "template": "./node_modules/minami",
     "encoding": "utf8",
     "destination": "./out",
     "recurse": true
