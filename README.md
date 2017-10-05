@@ -20,7 +20,10 @@ Todo:
 ## Run an example bot
 ```javascript
 const borq = require('borq');
-const facebookBot = borq.facebookBot;
+const {
+  facebookBot,
+  config
+} = borq;
 
 /*
 * Set Messenger Profile API
@@ -30,7 +33,7 @@ facebookBot.setGetStarted('start');
 facebookBot.setGreeting('Hello, I am a bot.');
 facebookBot.setMenu([
   {
-    locale: 'in_ID',
+    locale: 'default',
     composer_input_disabled: true,
     call_to_actions: [
       {
@@ -40,56 +43,33 @@ facebookBot.setMenu([
         webview_height_ratio: 'full',
       }
     ]
-  }, {
-    locale: 'default',
-    composer_input_disabled: true,
-    call_to_actions: [
-      {title: '',
-       type: 'nested',
-       call_to_actions: [
-         {
-           title: 'English',
-           type: 'postback',
-           payload: 'english',
-         },
-        {
-          title: 'Bahasa',
-          type: 'postback',
-          payload: 'bahasa',
-        },
-       ],
-      },
-    ]
   }
 ]);
 
-facebookBot.on('facebook_postback', (bot, message) => {
+facebookBot.borqBot.on('facebook_postback', (bot, message) => {
   if (message.payload === 'start') {
     bot.startConversation(message, (err, convo) => {
       convo.addMessage('Started');
     });
-  } else if (message.payload === 'english') {
+  } else {
     bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Hello');
+      convo.addMessage(t('hello'));
     });
-  } else if (message.payload === 'bahasa') {
-    bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Halo');
-    });
-  }
+  }});
+
+facebookBot.borqBot.hears(['hello'],
+                          'message_received',
+                          (bot, message) => bot.reply(message, t('key')));
+
+const botty = facebookBot.borqBot.spawn({});
+
+facebookBot.start(botty, (err, webserver) => {
+  // Add routes for your bot to listen on
+  webserver.get('/', (req, res) => {
+    res.send('<h3>This is a bot</h3>');
+  });
 });
 
-facebookBot.hears(['hello'],
-                  'message_received',
-                  (bot, message) => {
-                    bot.reply(message, 'How\'s your day going?');
-});
-
-facebookBot.hears([/([a-z])\w+/gi],
-                  'message_received',
-                  function(bot, message) {
-                    bot.reply(message, 'I don\'t know that word yet');
-});
 ```
 
 ## Documentation
