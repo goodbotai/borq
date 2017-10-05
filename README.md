@@ -1,6 +1,9 @@
 [![NPM](https://nodei.co/npm/borq.png?downloads=true&stars=true)](https://nodei.co/npm/borq/)
 
 [![Build Status](https://travis-ci.org/goodbotai/borq.svg?branch=master)](https://travis-ci.org/goodbotai/borq)
+[![npm](https://img.shields.io/npm/v/borq.svg)](https://www.npmjs.com/package/borq)
+[![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://github.com/goodbotai/borq/blob/master/LICENSE)
+
 
 # Borq
 Short for Bot Orchestration, borq is a Bot orchestration framework aimed at

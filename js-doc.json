@@ -13,5 +13,8 @@
     "encoding": "utf8",
     "destination": "./out",
     "recurse": true
+  },
+  "template": {
+    "title": "wow"
   }
 }
