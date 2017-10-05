@@ -1,5 +1,11 @@
+/** @module config */
 const env = process.env;
 
+/**
+* Configuration options for the bot
+* @constant
+* @type {object}
+*/
 module.exports = {
   // core
   environment: env.NODE_ENV || 'development', // dev, prod, test
