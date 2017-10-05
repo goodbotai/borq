@@ -2,7 +2,8 @@
 
 if [ "${TRAVIS_BRANCH}" = "master" ]; then
     echo "Generating and pushing docs to github pages"
-    cd  out/ || exit
+    cat docs/_css/table.css >> out/styles/jsdoc-default.css || exit
+    cd out/ || exit
     git init
     git config user.name "Travis CI"
     git add .
