@@ -51,10 +51,10 @@ facebookBot.hears([/([a-z])\w+/gi],
 ```
 
 ## Documentation
- * [Deploying](docs/Deploying.md)
- * [Environment variables](docs/Environment%20Variables.md)
- * [Persistence](docs/Persistence.md)
- * [Testing](docs/Testing.md)
+ * [Deploying](https://github.com/goodbotai/borq/blob/master/docs/Deploying.md)
+ * [Environment variables](https://github.com/goodbotai/borq/blob/master/docs/Environment%20Variables.md)
+ * [Persistence](https://github.com/goodbotai/borq/blob/master/docs/Persistence.md)
+ * [Testing](https://github.com/goodbotai/borq/blob/master/docs/Testing.md)
  * [API Docs](https://goodbotai.github.io/borq)
 
 # License
