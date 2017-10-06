@@ -17,8 +17,8 @@ facebookBot.setMenu([
         title: 'FAQ',
         url: 'https://goodbotai.github.io/borq/',
         webview_height_ratio: 'full',
-      }
-    ]
+      },
+    ],
   }, {
     locale: 'default',
     composer_input_disabled: true,
@@ -38,8 +38,8 @@ facebookBot.setMenu([
         },
        ],
       },
-    ]
-  }
+    ],
+  },
 ]);
 
 facebookBot.on('facebook_postback', (bot, message) => {
