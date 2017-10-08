@@ -8,3 +8,12 @@ table, th, td {
     text-align: left;
     border: 1px solid #DFDFDF;
 }
+
+#main {
+display: block;
+min-height: 90%;
+}
+
+footer {
+bottom: 0;
+}
