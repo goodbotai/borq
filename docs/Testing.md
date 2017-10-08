@@ -1,5 +1,3 @@
-# Testing
-
 ## Tests
 no tests yet
 

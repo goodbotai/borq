@@ -1,10 +1,17 @@
+/** @module config */
 const env = process.env;
 
+/**
+* Configuration options for the bot
+* @constant
+* @type {object}
+*/
 module.exports = {
   // core
   environment: env.NODE_ENV || 'development', // dev, prod, test
   PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
   defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
+  translationsDir: env.TRANSLATIONS_DIR || './translations',
 
   // milliseconds per min * number of mins
   conversationTimeout: env.CONVERSATION_TIMEOUT || (60000 * 20),
@@ -13,7 +20,7 @@ module.exports = {
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
   facebookAppSecret: env.FACEBOOK_APP_SECRET,
   facebookApiVersion: env.FACEBOOK_API_VERSION || 'v2.10',
-  facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'karma',
+  facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'borq',
 
   // external data stores
   onaOrg: env.ONA_USERNAME,

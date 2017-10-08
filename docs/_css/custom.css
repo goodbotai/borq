@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(151, 151, 151, 0.58);
+}
+
+table, th, td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #DFDFDF;
+}
+
+#main {
+display: block;
+min-height: 90%;
+}
+
+footer {
+bottom: 0;
+}

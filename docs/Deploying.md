@@ -1,7 +1,4 @@
-# Global
 Check out the docs on the required [Environment variables](docs/Env.md).
-
-# Production
 
 ## Using docker
 
