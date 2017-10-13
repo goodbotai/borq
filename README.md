@@ -21,7 +21,7 @@ Todo:
 ```javascript
 const borq = require('borq');
 const {
-  facebookBot,
+  facebook,
   config
 } = borq;
 
@@ -29,9 +29,9 @@ const {
 * Set Messenger Profile API
 * https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api
 */
-facebookBot.setGetStarted('start');
-facebookBot.setGreeting('Hello, I am a bot.');
-facebookBot.setMenu([
+facebook.setGetStarted('start');
+facebook.setGreeting('Hello, I am a bot.');
+facebook.setMenu([
   {
     locale: 'default',
     composer_input_disabled: true,
@@ -46,7 +46,7 @@ facebookBot.setMenu([
   }
 ]);
 
-facebookBot.borqBot.on('facebook_postback', (bot, message) => {
+facebook.borqBot.on('facebook_postback', (bot, message) => {
   if (message.payload === 'start') {
     bot.startConversation(message, (err, convo) => {
       convo.addMessage('Started');
@@ -57,13 +57,13 @@ facebookBot.borqBot.on('facebook_postback', (bot, message) => {
     });
   }});
 
-facebookBot.borqBot.hears(['hello'],
+facebook.borqBot.hears(['hello'],
                           'message_received',
                           (bot, message) => bot.reply(message, t('key')));
 
-const botty = facebookBot.borqBot.spawn({});
+const botty = facebook.borqBot.spawn({});
 
-facebookBot.start(botty, (err, webserver) => {
+facebook.start(botty, (err, webserver) => {
   // Add routes for your bot to listen on
   webserver.get('/', (req, res) => {
     res.send('<h3>This is a bot</h3>');
