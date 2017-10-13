@@ -8,9 +8,16 @@ install:
 
 script:
   - yarn lint
-  - yarn docs
-  - yarn deploy-docs
 
 env:
  global:
  - GH_REF: github.com/goodbotai/borq.git
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    - yarn docs
+    - yarn deploy-docs
+  on:
+    tags: true
