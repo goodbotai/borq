@@ -39,7 +39,7 @@ app.post('/update-contact', (req, res) => {
   const {body} = req;
   const {urn, uuid} = req.query;
   if (body && urn || uuid) {
-    res.status(201).json('updated');
+    res.status(201).json('Updated');
   } else {
     res.status(400).json('bad request');
   }

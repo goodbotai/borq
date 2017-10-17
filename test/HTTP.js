@@ -5,24 +5,27 @@ const server = require('./server.js');
 
 const baseURL = `http://localhost:4000`;
 
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised");
+chai.use(chaiAsPromised);
+chai.should();
+
+
 function testHTTP() {
-  if (server.listening) {
-    describe('test request', () => {
+  describe('test request', () => {
       it('retry HTTP requests with a response code >= 400');
 
       it('makes http POST requests', () => {
-        http.request(`${baseURL}/facebook-profile`, {method: 'POST'})
-          .then((res) => assert.equal('Created', res));
+        return http.request(`${baseURL}/facebook-profile`, {method: 'POST'})
+          .should.eventually.equal('Created');
+
       });
 
       it('makes http GET requests', () => {
-        http.request(`${baseURL}/facebook-profile`, {method: 'GET'})
-          .then((res) => assert.equal('Ok', res));
+        return http.request(`${baseURL}/facebook-profile`, {method: 'GET'})
+          .should.eventually.equal('Ok');
       });
     });
-  } else {
-    testHTTP();
-  }
 }
 
 module.exports = testHTTP;
