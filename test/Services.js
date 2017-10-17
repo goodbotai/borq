@@ -1,12 +1,10 @@
 /* eslint require-jsdoc: "off" */
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
 const services = require('../lib/Services.js');
-const assert = require('assert');
 const {conversation} = require('./Aggregate.js');
-const chai = require("chai");
-const chaiAsPromised = require("chai-as-promised");
 
 const baseURL = `http://localhost:4000`;
-
 chai.use(chaiAsPromised);
 chai.should();
 
@@ -25,7 +23,7 @@ function testServices() {
     });
 
     it('can be updated via a uuid', () => {
-      return services.updateRapidProContact({uuid: '232e4-dssdc-q3asd23e322-2323ed'},
+      return services.updateRapidProContact({uuid: '232e4-dssdc-q32322-2323ed'},
                                      {language: 'ind'},
                                             `${baseURL}/update-contact`)
         .should.eventually.equal('Updated');
