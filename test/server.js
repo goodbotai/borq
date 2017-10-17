@@ -18,16 +18,15 @@ app.post('/facebook-profile', (req, res) => {
 // Check for expected strucutre in Ona submission
 app.post('/ona-submission', (req, res) => {
   const {
-    messenger_id,
+    messenger_id: psid,
     meta,
-    first_name,
-    last_name } = req.body.submission;
-  if (messenger_id && meta && first_name && last_name ) {
+    first_name: fName,
+    last_name: lName} = req.body.submission;
+  if (psid && meta && fName && lName ) {
     res.status(201).json('Created');
   } else {
     res.status(400).json('bad request');
   }
-
 });
 
 // Create rapidpro contact
@@ -38,7 +37,7 @@ app.post('/create-contact', (req, res) => {
 // Check for body *and* urn *or* uuid
 app.post('/update-contact', (req, res) => {
   const {body} = req;
-  const {urn, uuid} =  req.query;
+  const {urn, uuid} = req.query;
   if (body && urn || uuid) {
     res.status(201).json('updated');
   } else {

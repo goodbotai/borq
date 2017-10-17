@@ -26,7 +26,6 @@ const utils = require('../lib/utils/Utils.js');
   };
 
 function testAggregate() {
-
   const date = new Date(unixTimestamp);
   const aggregated = aggregate.aggregate(conversation);
   const onaSubmission = aggregate.genOnaSubmission(aggregated);

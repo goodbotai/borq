@@ -1,11 +1,11 @@
+/* eslint require-jsdoc: "off" */
 const services = require('../lib/Services.js');
 const assert = require('assert');
 const {conversation} = require('./Aggregate.js');
-const aggregate = require('../lib/Aggregate.js');
 
 const baseURL = `http://localhost:4000`;
 
-function testServices () {
+function testServices() {
   describe('postContactToRapidpro', () => {
     it('can create RapidPro contact');
   });
