@@ -5,7 +5,6 @@ const config = require('../config/Config.js');
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
-function testAggregate() {
   const user = 1234567;
   const unixTimestamp = 1507807496394;
   const conversation = {
@@ -25,6 +24,9 @@ function testAggregate() {
       },
     },
   };
+
+function testAggregate() {
+
   const date = new Date(unixTimestamp);
   const aggregated = aggregate.aggregate(conversation);
   const onaSubmission = aggregate.genOnaSubmission(aggregated);
@@ -88,4 +90,4 @@ function testAggregate() {
   });
 }
 
-module.exports = testAggregate;
+module.exports = {testAggregate, conversation};
