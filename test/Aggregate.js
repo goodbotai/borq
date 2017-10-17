@@ -1,6 +1,7 @@
 /* eslint require-jsdoc: "off" */
 const assert = require('assert');
 
+const config = require('../config/Config.js');
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
@@ -25,6 +26,9 @@ function testAggregate() {
     },
   };
   const date = new Date(unixTimestamp);
+  const aggregated = aggregate.aggregate(conversation);
+  const onaSubmission = aggregate.genOnaSubmission(aggregated);
+  const instanceID = onaSubmission.submission.meta.instanceID;
 
   describe('aggregate', () => {
     it('returns an object containing a user ID under psid', () => {
@@ -64,6 +68,22 @@ function testAggregate() {
   });
 
   describe('genOnaSubmission', () => {
+    it('generates a valid submission', () => {
+      const expected = {id: config.onaFormIdString,
+                        submission: {
+                          playWithShopToys: 'yes',
+                          playWithShopToysTimeStamp: date,
+                          meta: {instanceID},
+                        },
+                       };
+      assert.deepEqual(expected, onaSubmission);
+    });
+
+    it('has an instance id for each submission', () => {
+      assert.ok(instanceID);
+    });
+
+    it('generates repeat groups in general');
     it('is not a convoluted mess');
   });
 }
