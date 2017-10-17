@@ -1,3 +1,4 @@
+/* eslint require-jsdoc: "off" */
 const http = require('../lib/HTTP.js');
 const assert = require('assert');
 

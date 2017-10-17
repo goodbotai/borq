@@ -1,3 +1,4 @@
+/* eslint require-jsdoc: "off" */
 const assert = require('assert');
 const utils = require('../../lib/utils/Utils.js');
 
@@ -33,17 +34,19 @@ function testUtils() {
   });
 
   describe('test getObjectfromobjectarray', () => {
-    it('returns the last object from an array of objects that contains the value', () => {
-      const obj = {lang: 'en', locale: 'en_GB'};
-      const objArr = [{lang: 'en', locale: 'en_US'},
-                      {lang: 'pt', locale: 'pt_BR'},
-                      {lang: 'en', locale: 'en_GB'}];
-      assert.deepEqual(obj, utils.getObjectFromObjectArray(objArr, 'en'));
+    it('returns the last object from an array of objects containing the value',
+       () => {
+         const obj = {lang: 'en', locale: 'en_GB'};
+         const objArr = [{lang: 'en', locale: 'en_US'},
+                         {lang: 'pt', locale: 'pt_BR'},
+                         {lang: 'en', locale: 'en_GB'}];
+         assert.deepEqual(obj, utils.getObjectFromObjectArray(objArr, 'en'));
     });
-    it('returns an empty object when the value does not exist in any of the objects', () => {
-      const obj = {lang: 'en', locale: 'en_US'};
-      const objArr = [{lang: 'en', locale: 'en_US'}, {lang: 'pt', locale: 'pt_BR'}];
-      assert.deepEqual({}, utils.getObjectFromObjectArray(objArr, 'in'));
+    it('returns empty object when value doesn\'t exist in any of the objects',
+       () => {
+         const objArr = [{lang: 'en', locale: 'en_US'},
+                         {lang: 'pt', locale: 'pt_BR'}];
+         assert.deepEqual({}, utils.getObjectFromObjectArray(objArr, 'in'));
     });
   });
 }
