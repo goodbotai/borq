@@ -48,4 +48,6 @@ app.post('/update-contact', (req, res) => {
 
 const server = app.listen(4000);
 
+setTimeout(() => server.close(), 500);
+
 module.exports = server;
