@@ -24,4 +24,4 @@ deploy:
   local_dir: out
   github_token: $GH_TOKEN
   on:
-    branch: master
+    tags: true
