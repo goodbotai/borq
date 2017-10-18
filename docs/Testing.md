@@ -20,7 +20,7 @@ yarn run lint -- --fix
 
 #### Always lint before pushing
 ```
-ln -s .dev-tools/git-hooks/pre-push .git/hooks/pre-push
+cp .dev-tools/git-hooks/pre-push .git/hooks/pre-push
 export DO_STYLE_CHECKS=true
 ```
 
