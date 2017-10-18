@@ -1,6 +1,7 @@
 language: node_js
+
 node_js:
-  - "8.4.0"
+  - 8.4.0
 
 install:
   - npm install --dev
@@ -9,16 +10,16 @@ install:
 script:
   - yarn lint
   - yarn test
+  - yarn docs
 
 env:
- global:
- - GH_REF: github.com/goodbotai/borq.git
+  global:
+    - GH_REF: github.com/goodbotai/borq.git
+    - secure: S567U/zOMKOddrGtQBmFyA6ROzinMgheQ7rGoyVbw9i43hBzvKVgk+C77+cVCLPr8ps6qwqhV9Ex5ehM3ic9gXDJt9ZlpzlevP+epKxG11WL3S3RwAOGlp/wOkSM+KhEqYqNOSzjA5WLttzg5GFSqs+T3l7HelQfZk55t2O4HSmmKUKPbFfDZ/84suvPSf1pm+d8f99k5KQFnTO3JHbIkbdx76Hsa8KRsZFJ2oA3DgQOXPOf+W3AdlG5zT5t1hAv0wg1O1Q45zB1MDcMfAUYcJOk72eajWTx9E0jreAgEVNUG2oyBG+GNdN2eMtbO4hANcdbBAH6wQq797OK76YVN6MM2HiMMZ1W7emNmo5wP6nc23w7YXJ88a1Ysffxxi4aLOMD1rBlVT5/cjcjvRUeR/OHx+9fOLPo/G6KioC5oz0iXwNPSYkZBHQ3nKf4uribXAPV/8f+n9HzjSQTnILWXiYaaGqIJAjEzL8WL5dBBGhngkILzCX/Ur4LeYJkhLnrVTg089X8urjtWnBpZKMKAwhPfV768prfKurmRbirIlgJfw5WfRoiV34Bl3O7bcNQMQ0nIobgaNhF8JZRq6adp0K8ChVnfNl3oplXN1kiVr9YJRRb4ErLzRSJZqkP/TNUqOs5wFeiSoFGgCUvAyjQZN5IkKIr4VrdKcnbEgj/3Co=
 
 deploy:
   skip_cleanup: true
   provider: script
-  script:
-    - yarn docs
-    - yarn deploy-docs
+  script: .deploy-ghpages.sh
   on:
     tags: true
