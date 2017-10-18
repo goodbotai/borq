@@ -19,13 +19,14 @@ yarn run lint -- --fix
 ```
 
 #### Always lint before pushing
-
 ```
+ln -s .dev-tools/git-hooks/pre-push .git/hooks/pre-push
 export DO_STYLE_CHECKS=true
 ```
 
+
 ## Tests
-Using mocha with BDD style testing
+Using mocha with BDD style testing and chai-as-promised for promises
 Mocha looks for a `test/` dir in the root of the project and then runs the
 `tests.js` file in it.
 
@@ -47,7 +48,7 @@ $ yarn test --watch
 ```
 
 ### Running tests a single module
-Todo: run the functions in the test file
+Not yet implemented
 
 
 References:

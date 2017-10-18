@@ -1,0 +1,20 @@
+#!/bin/sh
+
+RED='\033[0;31m'
+STOP_FORMATTING='\033[0m'
+GREEN='\033[0;32m'
+BOLD='\033[0;1m'
+
+if [ "$DO_STYLE_CHECKS" == "true" ]; then
+    echo 'Style checks are enabled. Unset $DO_STYLE_CHECKS to disable them'
+    echo "${BOLD}Linting this code${STOP_FORMATTING}"
+
+    yarn lint ||
+    { echo "${RED}Linting failed${STOP_FORMATTING}\n"; exit 1; }
+
+    echo "\n${GREEN}Linting passed${STOP_FORMATTING}\n"
+    exit 0
+else
+    echo 'Skipping style checks. Set $DO_STYLE_CHECKS to true to enable them'
+    exit 0
+fi
