@@ -11,6 +11,7 @@ script:
   - yarn lint
   - yarn test
   - yarn docs
+  - cat docs/_css/custom.css >> out/styles/jsdoc-default.css
 
 env:
   global:
@@ -19,7 +20,8 @@ env:
 
 deploy:
   skip_cleanup: true
-  provider: script
-  script: .deploy-ghpages.sh
+  provider: pages
+  local_dir: out
+  github_token: $GH_TOKEN
   on:
     branch: master
