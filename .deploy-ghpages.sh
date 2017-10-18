@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /bin/sh
 
 echo "Generating and pushing docs to github pages"
 cat docs/_css/custom.css >> out/styles/jsdoc-default.css || exit
