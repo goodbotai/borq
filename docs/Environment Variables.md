@@ -13,7 +13,7 @@ them to create a functioning bot.
 |ONA_API_TOKEN                     |API token provided by Ona. Required if sending data to Ona.                                 |undefined                |
 |RAPIDPRO_API_TOKEN                |API token provided by Rapidpro. Required if creating or updating RapidPro contacts.         |undefined                |
 |RAPIDPRO_GROUPS                   |JSON Object of keys to Rapidpro group UUIDs that your users should be added to              |[]                       |
-|DELETED_USER_RAPIDPRO_GROUPS      |JSON Object of keys to Rapidpro group UUIDs that your users should be moved to e.g          |[]                       |
+|DELETED_USER_RAPIDPRO_GROUPS      |JSON Object of keys to Rapidpro group UUIDs that your users should be moved to              |[]                       |
 |SENTRY_DSN                        |DSN provided by Sentry                                                                      |undefined                |
 |ACCESS_LOG_FILE                   |File to store access logs                                                                   |bot.access.log           |
 |DEBUG_TRANSLATIONS                |Whether to turn off or on translations debugging                                            |false                    |
