@@ -22,4 +22,4 @@ deploy:
   provider: script
   script: .deploy-ghpages.sh
   on:
-    tags: true
+    branch: master
