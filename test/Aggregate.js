@@ -1,7 +1,6 @@
 /* eslint require-jsdoc: "off" */
 const assert = require('assert');
 
-const config = require('../config/Config.js');
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 

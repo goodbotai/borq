@@ -35,7 +35,7 @@ function testServices() {
       return services.genAndPostSubmissionToOna(conversation,
                                                 {
                                                   name: 'Jane Doe',
-                                                  idString: "23f23wre-ewe"
+                                                  idString: '23f23wre-ewe',
                                                 },
                                                 `${baseURL}/ona-submission`)
       .should.eventually.equal('Created');
