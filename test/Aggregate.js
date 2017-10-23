@@ -1,7 +1,6 @@
 /* eslint require-jsdoc: "off" */
 const assert = require('assert');
 
-const config = require('../config/Config.js');
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
@@ -70,8 +69,7 @@ function testAggregate() {
 
   describe('genOnaSubmission', () => {
     it('generates a valid submission', () => {
-      const expected = {id: config.onaFormIdString,
-                        submission: {
+      const expected = {submission: {
                           playWithShopToys: 'yes',
                           playWithShopToysTimeStamp: date,
                           meta: {instanceID},
