@@ -18,11 +18,12 @@ app.post('/facebook-profile', (req, res) => {
 // Check for expected strucutre in Ona submission
 app.post('/ona-submission', (req, res) => {
   const {
+    id,
     messenger_id: psid,
     meta,
     first_name: fName,
     last_name: lName} = req.body.submission;
-  if (psid && meta && fName && lName ) {
+  if (id, psid && meta && fName && lName ) {
     res.status(201).json('Created');
   } else {
     res.status(400).json('bad request');

@@ -33,7 +33,10 @@ function testServices() {
   describe('postSubmissiontoona', () => {
     it('can post submission to Ona', () => {
       return services.genAndPostSubmissionToOna(conversation,
-                                         {name: 'Jane Doe'},
+                                                {
+                                                  name: 'Jane Doe',
+                                                  idString: "23f23wre-ewe"
+                                                },
                                                 `${baseURL}/ona-submission`)
       .should.eventually.equal('Created');
     });
