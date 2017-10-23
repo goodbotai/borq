@@ -70,8 +70,7 @@ function testAggregate() {
 
   describe('genOnaSubmission', () => {
     it('generates a valid submission', () => {
-      const expected = {id: config.onaFormIdString,
-                        submission: {
+      const expected = {submission: {
                           playWithShopToys: 'yes',
                           playWithShopToysTimeStamp: date,
                           meta: {instanceID},
