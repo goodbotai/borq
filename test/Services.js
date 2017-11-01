@@ -21,7 +21,12 @@ const userProfile = {
 
 function testServices() {
   context('RapidPro', () => {
-    describe('Can create a user', () => {
+    context('Groups', () => {
+      it('Can get a group');
+    });
+
+    context('Contacts', () => {
+      describe('Can create a user', () => {
       specify('With only facebook urn', () => {
         const facebookProfile = userProfile;
         return services.createUser(['facebook:123455233343123'],
@@ -66,6 +71,7 @@ function testServices() {
                                    `${baseURL}/update-contact`)
           .should.eventually.equal('Updated');
       });
+    });
     });
   });
 
