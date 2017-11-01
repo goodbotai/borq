@@ -22,7 +22,10 @@ const userProfile = {
 function testServices() {
   context('RapidPro', () => {
     context('Groups', () => {
-      it('Can get a group');
+      it('Can get a group', () => {
+        return services.getGroup('y34w-3er4-ew23-2323', `${baseURL}/get-group`)
+        .should.eventually.equal('Ok');
+      });
     });
 
     context('Contacts', () => {
