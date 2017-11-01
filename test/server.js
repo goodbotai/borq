@@ -10,6 +10,15 @@ app.get('/facebook-profile', (req, res) => {
   res.status(200).json('Ok');
 });
 
+app.get('/get-group', (req, res) => {
+  const uuid = req.query ? req.query.uuid : undefined;
+  if (uuid) {
+    res.status(200).json('Ok');
+  } else {
+    res.status(400).json('bad request');
+  }
+});
+
 // Generic POST
 app.post('/facebook-profile', (req, res) => {
   res.status(201).json('Created');

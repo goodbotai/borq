@@ -21,7 +21,15 @@ const userProfile = {
 
 function testServices() {
   context('RapidPro', () => {
-    describe('Can create a user', () => {
+    context('Groups', () => {
+      it('Can get a group', () => {
+        return services.getGroup('y34w-3er4-ew23-2323', `${baseURL}/get-group`)
+        .should.eventually.equal('Ok');
+      });
+    });
+
+    context('Contacts', () => {
+      describe('Can create a user', () => {
       specify('With only facebook urn', () => {
         const facebookProfile = userProfile;
         return services.createUser(['facebook:123455233343123'],
@@ -66,6 +74,7 @@ function testServices() {
                                    `${baseURL}/update-contact`)
           .should.eventually.equal('Updated');
       });
+    });
     });
   });
 
