@@ -32,7 +32,17 @@ app.post('/ona-submission', (req, res) => {
 
 // Create rapidpro contact
 app.post('/create-contact', (req, res) => {
-  res.status(201).json('Created');
+  const {urn} = req.query;
+  if (urn) {
+    res.status(201).json('Created');
+  } else {
+    const {urns} = req.body;
+    if (urns) {
+      res.status(201).json('Created');
+    } else {
+      res.status(400).json('bad request');
+    }
+  }
 });
 
 // Check for body *and* urn *or* uuid
