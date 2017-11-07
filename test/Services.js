@@ -3,6 +3,7 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 const services = require('../lib/Services.js');
 const {conversation} = require('./Aggregate.js');
+const utils = require('../lib/utils/Utils.js');
 
 const baseURL = `http://localhost:4000`;
 chai.use(chaiAsPromised);
@@ -30,31 +31,33 @@ function testServices() {
 
     context('Contacts', () => {
       describe('Can create a user', () => {
+        const {first_name,last_name} = userProfile;
       specify('With only facebook urn', () => {
-        const facebookProfile = userProfile;
-        return services.createUser(['facebook:123455233343123'],
-                                   ['23433-2343-2343-1234'],
+        return services.createUser(`${first_name} ${last_name}` ,
                                    'eng',
-                                   facebookProfile,
-                                   {referrer: 'sd32-s1da-0812-po92'},
+                                   ['facebook:123455233343123'],
+                                   ['23433-2343-2343-1234'],
+                                   utils.mergeObjects(userProfile,
+                                     {referrer: 'sd32-s1da-0812-po92'}),
                                    `${baseURL}/create-contact`)
           .should.eventually.equal('Created');
       });
       specify('With only phone number as the urn', () => {
-        return services.createUser(['tel:+254723432334'],
+        return services.createUser(`${first_name} ${last_name}`,
+                                    'eng',
+                                   ['tel:+254723432334'],
                                    ['23433-2343-2343-1234'],
-                                   'eng',
                                    userProfile,
-                                   {},
                                    `${baseURL}/create-contact`)
           .should.eventually.equal('Created');
       });
       specify('With multiple urns', () => {
-        return services.createUser(['facebook: 2343123434', 'tel:+25472343234'],
-                                   ['23433-2343-2343-1234'],
-                                   'eng',
+        return services.createUser(`${first_name} ${last_name}`,
+                                  'eng',
+                                  ['facebook: 2343123434',
+                                   'tel:+25472343234'],
+                                  ['23433-2343-2343-1234'],
                                    userProfile,
-                                   {},
                                    `${baseURL}/create-contact`)
           .should.eventually.equal('Created');
       });
