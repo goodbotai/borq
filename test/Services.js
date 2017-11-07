@@ -31,9 +31,9 @@ function testServices() {
 
     context('Contacts', () => {
       describe('Can create a user', () => {
-        const {first_name,last_name} = userProfile;
+        const {first_name: firstName, last_name: lastName} = userProfile;
       specify('With only facebook urn', () => {
-        return services.createUser(`${first_name} ${last_name}` ,
+        return services.createUser(`${firstName} ${lastName}`,
                                    'eng',
                                    ['facebook:123455233343123'],
                                    ['23433-2343-2343-1234'],
@@ -43,7 +43,7 @@ function testServices() {
           .should.eventually.equal('Created');
       });
       specify('With only phone number as the urn', () => {
-        return services.createUser(`${first_name} ${last_name}`,
+        return services.createUser(`${firstName} ${lastName}`,
                                     'eng',
                                    ['tel:+254723432334'],
                                    ['23433-2343-2343-1234'],
@@ -52,7 +52,7 @@ function testServices() {
           .should.eventually.equal('Created');
       });
       specify('With multiple urns', () => {
-        return services.createUser(`${first_name} ${last_name}`,
+        return services.createUser(`${firstName} ${lastName}`,
                                   'eng',
                                   ['facebook: 2343123434',
                                    'tel:+25472343234'],
