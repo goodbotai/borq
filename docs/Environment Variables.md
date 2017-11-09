@@ -17,7 +17,7 @@ them to create a functioning bot.
 |SENTRY_DSN                        |DSN provided by Sentry                                                                      |undefined                |
 |ACCESS_LOG_FILE                   |File to store access logs                                                                   |bot.access.log           |
 |DEBUG_TRANSLATIONS                |Whether to turn off or on translations debugging                                            |false                    |
-|TRANSLATIONS_DIR                  |Path to the dir holding the translations files                                              |'./translations'         |
+|TRANSLATIONS_DIR                  |Path to the dir holding the translations files                                              |undefined                |
 |FACEBOOK_VERIFY_TOKEN             |Token used to verify your app to the webhooks endpoint listens on /facebook/recieve         |'borq'                   |
 |FACEBOOK_APP_SECRET               |Facebook provided app secret. Required for Messenger.                                       |undefined                |
 |CONVERSATION_TIMEOUT              |Time to wait for a user to respond (in milliseconds).                                       |60000 * 20 (20 mins)     |
