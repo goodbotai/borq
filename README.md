@@ -18,6 +18,9 @@ Todo:
  - Telegram
 
 ## Run an example bot
+
+`$ FACEBOOK_PAGE_ACCESS_TOKEN= FACEBOOK_APP_SECRET= FACEBOOK_VERIFY_TOKEN= yarn dev`
+
 ```javascript
 const borq = require('borq');
 const {
@@ -25,43 +28,58 @@ const {
   config
 } = borq;
 
+const {controller} = facebook;
+const botty = controller.spawn({});
+
 /*
 * Set Messenger Profile API
 * https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api
 */
-facebook.setGetStarted('start');
-facebook.setGreeting('Hello, I am a bot.');
 facebook.setMenu([
   {
     locale: 'default',
     composer_input_disabled: true,
     call_to_actions: [
-      {
-        type: 'web_url',
-        title: 'FAQ',
-        url: 'https://goodbotai.github.io/borq/',
-        webview_height_ratio: 'full',
-      }
-    ]
-  }
+         {
+           title: 'Restart',
+           type: 'postback',
+           payload: 'restart',
+         }, {
+           title: 'Other',
+           type: 'postback',
+           payload: 'other',
+         }, {
+           type: 'web_url',
+           title: 'FAQ',
+           url: 'https://goodbotai.github.io/borq/',
+           webview_height_ratio: 'full',
+         }
+       ],
+  },
 ]);
+facebook.setGetStarted('start');
+facebook.setGreeting('Hello, I am a bot.');
 
-facebook.borqBot.on('facebook_postback', (bot, message) => {
+controller.on('facebook_postback', (bot, message) => {
   if (message.payload === 'start') {
     bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Started');
+      convo.addMessage('Welcome to my lair!');
     });
   } else {
     bot.startConversation(message, (err, convo) => {
-      convo.addMessage(t('hello'));
+      convo.addMessage('Hello, you added a postback?');
     });
   }});
 
-facebook.borqBot.hears(['hello'],
-                          'message_received',
-                          (bot, message) => bot.reply(message, t('key')));
-
-const botty = facebook.borqBot.spawn({});
+controller.hears(['talk'],
+                 'message_received',
+                 (bot, message) => {
+                   bot.startConversation(message, (err, convo) => {
+                     convo.addQuestion('Say something',
+                                       (res, con) => con.next());
+                     convo.addQuestion('Ok bye', (res, con) => con.next());
+                   });
+                 });
 
 facebook.start(botty, (err, webserver) => {
   // Add routes for your bot to listen on
