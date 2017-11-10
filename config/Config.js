@@ -11,7 +11,7 @@ module.exports = {
   environment: env.NODE_ENV || 'development', // dev, prod, test
   PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
   defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
-  translationsDir: env.TRANSLATIONS_DIR,
+  translationsDir: env.TRANSLATIONS_DIR || './translations',
 
   // milliseconds per min * number of mins
   conversationTimeout: env.CONVERSATION_TIMEOUT || (60000 * 20),
