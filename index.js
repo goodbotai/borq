@@ -1,71 +1,61 @@
-const borq = require('borq');
-const facebookBot = borq.facebookBot;
+const {facebook} = require('./lib/Borq.js');
+const {controller} = facebook;
+const botty = controller.spawn({});
 
 /*
 * Set Messenger Profile API
 * https://developers.facebook.com/docs/messenger-platform/reference/messenger-profile-api
 */
-facebookBot.setGetStarted('start');
-facebookBot.setGreeting('Hello, I am a bot.');
-facebookBot.setMenu([
+facebook.setMenu([
   {
-    locale: 'in_ID',
-    composer_input_disabled: true,
-    call_to_actions: [
-      {
-        type: 'web_url',
-        title: 'FAQ',
-        url: 'https://goodbotai.github.io/borq/',
-        webview_height_ratio: 'full',
-      },
-    ],
-  }, {
     locale: 'default',
     composer_input_disabled: true,
     call_to_actions: [
-      {title: '',
-       type: 'nested',
-       call_to_actions: [
          {
-           title: 'English',
+           title: 'Restart',
            type: 'postback',
-           payload: 'english',
+           payload: 'restart',
+         }, {
+           title: 'Other',
+           type: 'postback',
+           payload: 'other',
+         }, {
+           type: 'web_url',
+           title: 'FAQ',
+           url: 'https://goodbotai.github.io/borq/',
+           webview_height_ratio: 'full',
          },
-        {
-          title: 'Bahasa',
-          type: 'postback',
-          payload: 'bahasa',
-        },
        ],
-      },
-    ],
   },
 ]);
+facebook.setGetStarted('start');
+facebook.setGreeting('Hello, I am a bot.');
 
-facebookBot.on('facebook_postback', (bot, message) => {
+controller.on('facebook_postback', (bot, message) => {
   if (message.payload === 'start') {
     bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Started');
+      convo.addMessage('Welcome to my lair!');
     });
-  } else if (message.payload === 'english') {
+  } else {
     bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Hello');
-    });
-  } else if (message.payload === 'bahasa') {
-    bot.startConversation(message, (err, convo) => {
-      convo.addMessage('Halo');
+      convo.addMessage('Hello, you added a postback?');
     });
   }
 });
 
-facebookBot.hears(['hello'],
-                  'message_received',
-                  (bot, message) => {
-                    bot.reply(message, 'How\'s your day going?');
-});
+controller.hears(['talk'],
+                 'message_received',
+                 (bot, message) => {
+                   bot.startConversation(message, (err, convo) => {
+                     convo.addQuestion('Say something',
+                                       (res, con) => con.next());
+                     convo.addQuestion('Ok bye', (res, con) => con.next());
+                   });
+                 });
 
-facebookBot.hears([/([a-z])\w+/gi],
-                  'message_received',
-                  function(bot, message) {
-                    bot.reply(message, 'I don\'t know that word yet');
+facebook.start(botty, (err, webserver) => {
+  // Add routes for your bot to listen on
+  webserver.get('/', (req, res) => {
+    res.send('<h3>This is a bot</h3>');
+  });
 });
