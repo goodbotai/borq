@@ -1,4 +1,5 @@
 const testUtils = require('./utils/Utils.js');
+const testLocales = require('./utils/Locales.js');
 const testHTTP = require('./HTTP.js');
 const {testAggregate} = require('./Aggregate.js');
 const testServices = require('./Services.js');
@@ -9,3 +10,4 @@ testServices();
 testAggregate();
 testHTTP();
 testUtils();
+testLocales();
