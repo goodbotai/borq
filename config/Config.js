@@ -21,6 +21,8 @@ module.exports = {
   facebookAppSecret: env.FACEBOOK_APP_SECRET,
   facebookApiVersion: env.FACEBOOK_API_VERSION || 'v2.10',
   facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'borq',
+  facebookApiHost: env.FACEBOOK_API_HOST ||
+    /test\w*/i.test(env.NODE_ENV) ? 'http://256.256.256.256' : undefined,
 
   // external data stores
   onaOrg: env.ONA_USERNAME,
