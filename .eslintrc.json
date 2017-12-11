@@ -3,6 +3,13 @@
   "env": {
     "node": true
   },
+  "rules": {
+    "max-len": ["error", { "code": 80,
+                           "ignoreTemplateLiterals": true,
+                           "ignoreTrailingComments": true,
+                           "ignoreComments": true,
+                           "ignoreRegExpLiterals": true }]
+  },
   "parserOptions": {
         "ecmaVersion": 6,
         "sourceType": "module",
