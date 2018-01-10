@@ -11,21 +11,23 @@ facebook.setMenu([
     locale: 'default',
     composer_input_disabled: true,
     call_to_actions: [
-         {
-           title: 'Restart',
-           type: 'postback',
-           payload: 'restart',
-         }, {
-           title: 'Other',
-           type: 'postback',
-           payload: 'other',
-         }, {
-           type: 'web_url',
-           title: 'FAQ',
-           url: 'https://goodbotai.github.io/borq/',
-           webview_height_ratio: 'full',
-         },
-       ],
+      {
+        title: 'Restart',
+        type: 'postback',
+        payload: 'restart',
+      },
+      {
+        title: 'Other',
+        type: 'postback',
+        payload: 'other',
+      },
+      {
+        type: 'web_url',
+        title: 'FAQ',
+        url: 'https://goodbotai.github.io/borq/',
+        webview_height_ratio: 'full',
+      },
+    ],
   },
 ]);
 facebook.setGetStarted('start');
@@ -43,15 +45,12 @@ controller.on('facebook_postback', (bot, message) => {
   }
 });
 
-controller.hears(['talk'],
-                 'message_received',
-                 (bot, message) => {
-                   bot.startConversation(message, (err, convo) => {
-                     convo.addQuestion('Say something',
-                                       (res, con) => con.next());
-                     convo.addQuestion('Ok bye', (res, con) => con.next());
-                   });
-                 });
+controller.hears(['talk'], 'message_received', (bot, message) => {
+  bot.startConversation(message, (err, convo) => {
+    convo.addQuestion('Say something', (res, con) => con.next());
+    convo.addQuestion('Ok bye', (res, con) => con.next());
+  });
+});
 
 facebook.start(botty, (err, webserver) => {
   // Add routes for your bot to listen on

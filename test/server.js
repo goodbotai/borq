@@ -31,8 +31,9 @@ app.post('/ona-submission', (req, res) => {
     messenger_id: psid,
     meta,
     first_name: fName,
-    last_name: lName} = req.body.submission;
-  if (id, psid && meta && fName && lName ) {
+    last_name: lName,
+  } = req.body.submission;
+  if ((id, psid && meta && fName && lName)) {
     res.status(201).json('Created');
   } else {
     res.status(400).json('bad request');
@@ -58,13 +59,12 @@ app.post('/create-contact', (req, res) => {
 app.post('/update-contact', (req, res) => {
   const {body} = req;
   const {urn, uuid} = req.query;
-  if (body && urn || uuid) {
+  if ((body && urn) || uuid) {
     res.status(201).json('Updated');
   } else {
     res.status(400).json('bad request');
   }
 });
-
 
 const server = app.listen(4000);
 
