@@ -20,7 +20,6 @@
     "prettier/prettier": [
       "error",
       {
-        "printWidth": 80,
         "singleQuote": true,
         "trailingComma": "es5",
         "bracketSpacing": false,
