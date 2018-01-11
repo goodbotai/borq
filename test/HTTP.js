@@ -1,5 +1,5 @@
 /* eslint require-jsdoc: "off" */
-const request = require('../lib/HTTP.js');
+const HTTP = require('../lib/HTTP.js');
 const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 
@@ -12,13 +12,15 @@ function testHTTP() {
     it('retry HTTP requests with a response code >= 400');
 
     it('makes http POST requests', () => {
-      return request(`${baseURL}/facebook-profile`, {method: 'POST'})
-        .should.eventually.equal('Created');
+      return HTTP.request(`${baseURL}/facebook-profile`, {
+        method: 'POST',
+      }).should.eventually.equal('Created');
     });
 
     it('makes http GET requests', () => {
-      return request(`${baseURL}/facebook-profile`, {method: 'GET'})
-        .should.eventually.equal('Ok');
+      return HTTP.request(`${baseURL}/facebook-profile`, {
+        method: 'GET',
+      }).should.eventually.equal('Ok');
     });
   });
 }
