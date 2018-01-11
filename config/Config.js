@@ -2,10 +2,10 @@
 const env = process.env;
 
 /**
-* Configuration options for the bot
-* @constant
-* @type {object}
-*/
+ * Configuration options for the bot
+ * @constant
+ * @type {object}
+ */
 module.exports = {
   // core
   environment: env.NODE_ENV || 'development', // dev, prod, test
@@ -14,15 +14,17 @@ module.exports = {
   translationsDir: env.TRANSLATIONS_DIR || './translations',
 
   // milliseconds per min * number of mins
-  conversationTimeout: env.CONVERSATION_TIMEOUT || (60000 * 20),
+  conversationTimeout: env.CONVERSATION_TIMEOUT || 60000 * 20,
 
   // facebook
   facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
   facebookAppSecret: env.FACEBOOK_APP_SECRET,
   facebookApiVersion: env.FACEBOOK_API_VERSION || 'v2.10',
   facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'borq',
-  facebookApiHost: env.FACEBOOK_API_HOST ||
-    /test\w*/i.test(env.NODE_ENV) ? 'http://256.256.256.256' : undefined,
+  facebookApiHost:
+    env.FACEBOOK_API_HOST || /test\w*/i.test(env.NODE_ENV)
+      ? 'http://256.256.256.256'
+      : undefined,
 
   // external data stores
   onaOrg: env.ONA_USERNAME,
@@ -30,9 +32,9 @@ module.exports = {
   onaApiToken: env.ONA_API_TOKEN,
   rapidproApiToken: env.RAPIDPRO_API_TOKEN,
   rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : {},
-  deletedUserGroups: env.DELETED_USER_RAPIDPRO_GROUPS ?
-    JSON.parse(env.DELETED_USER_RAPIDPRO_GROUPS) :
-    {},
+  deletedUserGroups: env.DELETED_USER_RAPIDPRO_GROUPS
+    ? JSON.parse(env.DELETED_USER_RAPIDPRO_GROUPS)
+    : {},
 
   // logging and error reporting
   sentryDSN: env.SENTRY_DSN,

@@ -1,28 +1,29 @@
 /* eslint require-jsdoc: "off" */
+/* eslint max-len: ["error", { "code": 100 }]*/
 const assert = require('assert');
 
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
-  const user = 1234567;
-  const unixTimestamp = 1507807496394;
-  const conversation = {
-    context: {
-      user,
+const user = 1234567;
+const unixTimestamp = 1507807496394;
+const conversation = {
+  context: {
+    user,
+  },
+  responses: {
+    playWithShopToys: {
+      text: 'yes',
+      user: '',
+      channel: '',
+      page: '',
+      timestamp: unixTimestamp,
+      type: 'facebook_postback',
+      referral: undefined,
+      question: '',
     },
-    responses: {
-      playWithShopToys: {
-        text: 'yes',
-        user: '',
-        channel: '',
-        page: '',
-        timestamp: unixTimestamp,
-        type: 'facebook_postback',
-        referral: undefined,
-        question: '',
-      },
-    },
-  };
+  },
+};
 
 function testAggregate() {
   const date = new Date(unixTimestamp);
@@ -35,16 +36,14 @@ function testAggregate() {
       assert.equal(user, aggregate.aggregate(conversation).psid);
     });
 
-    it('returns an object containing responses under responses',
-       () => {
-         assert.ok(aggregate.aggregate(conversation).responses);
-       });
+    it('returns an object containing responses under responses', () => {
+      assert.ok(aggregate.aggregate(conversation).responses);
+    });
 
-    it('the aggregated conversation has ISO 8601 timestamps in it',
-       () => {
-         const res = aggregate.aggregate(conversation).responses;
-         assert.deepEqual(date, res.playWithShopToysTimeStamp.text);
-       });
+    it('the aggregated conversation has ISO 8601 timestamps in it', () => {
+      const res = aggregate.aggregate(conversation).responses;
+      assert.deepEqual(date, res.playWithShopToysTimeStamp.text);
+    });
   });
 
   describe('extractTimestamps', () => {
@@ -56,25 +55,25 @@ function testAggregate() {
       assert.deepEqual(date, timestamps.playWithShopToysTimeStamp.text);
     });
 
-    it('creates a question<TimeStamp> reponse for responses with a timestamp',
-       () => {
-         const responsesWithTimeStamps = aggregate.extractTimeStamps(responses);
-         const expectedArray = utils.mergeObjects(
-           Object.keys(responses),
-           Object.keys(responses).map((e) => e+'TimeStamp')
-         );
-         assert.deepEqual(expectedArray, Object.keys(responsesWithTimeStamps));
+    it('creates a question<TimeStamp> reponse for responses with a timestamp', () => {
+      const responsesWithTimeStamps = aggregate.extractTimeStamps(responses);
+      const expectedArray = utils.mergeObjects(
+        Object.keys(responses),
+        Object.keys(responses).map((e) => e + 'TimeStamp')
+      );
+      assert.deepEqual(expectedArray, Object.keys(responsesWithTimeStamps));
     });
   });
 
   describe('genOnaSubmission', () => {
     it('generates a valid submission', () => {
-      const expected = {submission: {
-                          playWithShopToys: 'yes',
-                          playWithShopToysTimeStamp: date,
-                          meta: {instanceID},
-                        },
-                       };
+      const expected = {
+        submission: {
+          playWithShopToys: 'yes',
+          playWithShopToysTimeStamp: date,
+          meta: {instanceID},
+        },
+      };
       assert.deepEqual(expected, onaSubmission);
     });
 
