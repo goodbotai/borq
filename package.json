@@ -1,6 +1,6 @@
 {
   "name": "borq",
-  "version": "0.0.1-alpha.27",
+  "version": "0.0.1-alpha.28",
   "description": "Bot orchestration framework",
   "main": "lib/Borq.js",
   "scripts": {
