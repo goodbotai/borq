@@ -13,6 +13,22 @@ function testLocales() {
       assert.equal('BR', utils.extractRegionFromLocale('pt_BR'));
     });
   });
+  describe('test lookupCountry', () => {
+    it('successfully looks up by timezone', () => {
+      assert.equal('Indonesia', utils.lookupCountry({timezone: 8}));
+    });
+    it('successfully looks up by locale', () => {
+      assert.equal('Brazil', utils.lookupCountry({locale: 'pt_BR'}));
+    });
+    it('throws an exception when the country does not exist', () => {
+      assert.throws(() => {
+        utils.lookupCountry({
+          timezone: undefined,
+          locale: undefined,
+        });
+      }, Error);
+    });
+  });
   describe('test lookupISO6391', () => {
     it('returns a language in the ISO6391 standard', () => {
       assert.equal('en', utils.lookupISO6391('English'));
