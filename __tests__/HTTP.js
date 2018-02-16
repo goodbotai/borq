@@ -1,22 +1,31 @@
 /* eslint require-jsdoc: "off" */
-const HTTP = require('../lib/HTTP.js');
+const nock = require('nock');
+const request = require('../lib/HTTP.js');
 
-function testHTTP() {
-  describe('test request', () => {
-    it('retry HTTP requests with a response code >= 400');
+const url = 'https://exampe-url.com';
+const user = {name: 'John Doe', fields: {age: 23}};
+const obj = {f: {g: 'a'}};
+const jsonObj = JSON.stringify(obj);
 
-    it('makes http POST requests', () => {
-      return HTTP.request(`${baseURL}/facebook-profile`, {
-        method: 'POST',
-      }).should.eventually.equal('Created');
-    });
+nock(url)
+  .get('/')
+  .reply(200, {text: 'Hello'})
+  .post('/', obj)
+  .reply(201, user)
+  .persist();
 
-    it('makes http GET requests', () => {
-      return HTTP.request(`${baseURL}/facebook-profile`, {
-        method: 'GET',
-      }).should.eventually.equal('Ok');
-    });
+describe('test request', () => {
+  it('retry HTTP requests with a response code >= 400');
+
+  it('makes GET requests', () => {
+    return request(url, {method: 'GET'}).then((data) =>
+      expect(data.text).toBe('Hello')
+    );
   });
-}
 
-module.exports = testHTTP;
+  it('makes POST requests', () => {
+    return request(url, {method: 'POST', body: jsonObj}).then((data) =>
+      expect(data).toEqual(user)
+    );
+  });
+});
