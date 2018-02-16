@@ -1,6 +1,8 @@
 /* eslint require-jsdoc: "off" */
 const nock = require('nock');
+
 const request = require('../lib/HTTP.js');
+
 
 const url = 'https://exampe-url.com';
 const user = {name: 'John Doe', fields: {age: 23}};

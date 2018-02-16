@@ -1,7 +1,9 @@
 /* eslint require-jsdoc: "off" */
+const nock = require('nock');
+
 const services = require('../lib/Services.js');
-const {conversation} = require('./Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
+const {conversation} = require('./Aggregate.js');
 
 const userProfile = {
   first_name: 'John',
@@ -13,99 +15,72 @@ const userProfile = {
   is_payment_enabled: true,
 };
 
-function testServices() {
-  context('RapidPro', () => {
-    context('Groups', () => {
-      it('Can get a group', () => {
-        return services
-          .getGroup('y34w-3er4-ew23-2323', `${baseURL}/get-group`)
-          .should.eventually.equal('Ok');
-      });
-    });
+const onaBaseURL = 'https://api.ona.io';
+const rapidProBaseURL = 'https://rapidpro.ona.io/api/v2/';
+const groupUUID = 'y34w-3er4-ew23-2323';
 
-    context('Contacts', () => {
-      describe('Can create a user', () => {
-        const {first_name: firstName, last_name: lastName} = userProfile;
-        specify('With only facebook urn', () => {
-          return services
-            .createUser(
-              `${firstName} ${lastName}`,
-              'eng',
-              ['facebook:123455233343123'],
-              ['23433-2343-2343-1234'],
-              utils.mergeObjects(userProfile, {
-                referrer: 'sd32-s1da-0812-po92',
-              }),
-              `${baseURL}/create-contact`
-            )
-            .should.eventually.equal('Created');
-        });
-        specify('With only phone number as the urn', () => {
-          return services
-            .createUser(
-              `${firstName} ${lastName}`,
-              'eng',
-              ['tel:+254723432334'],
-              ['23433-2343-2343-1234'],
-              userProfile,
-              `${baseURL}/create-contact`
-            )
-            .should.eventually.equal('Created');
-        });
-        specify('With multiple urns', () => {
-          return services
-            .createUser(
-              `${firstName} ${lastName}`,
-              'eng',
-              ['facebook: 2343123434', 'tel:+25472343234'],
-              ['23433-2343-2343-1234'],
-              userProfile,
-              `${baseURL}/create-contact`
-            )
-            .should.eventually.equal('Created');
-        });
-      });
+nock(onaBaseURL)
+  .persist()
+  .post('/orgname/ona-submission')
+  .reply(201, {text: 'Created'});
 
-      describe('updateRapidProContact', () => {
-        it('can be updated via a urn', () => {
-          return services
-            .updateUser(
-              {urn: 'facebook:1234'},
-              {language: 'ind'},
-              `${baseURL}/update-contact`
-            )
-            .should.eventually.equal('Updated');
-        });
+const rapidPro = nock(rapidProBaseURL).persist();
 
-        it('can be updated via a uuid', () => {
-          return services
-            .updateUser(
-              {uuid: '232e4-dssdc-q32322-2323ed'},
-              {language: 'ind'},
-              `${baseURL}/update-contact`
-            )
-            .should.eventually.equal('Updated');
-        });
-      });
+rapidPro
+  .get('/groups.json')
+  .query({uuid: groupUUID})
+  .reply(200, {text: 'Got'});
+
+rapidPro
+  .post('/contacts.json', {language: 'ind'})
+  .query((urn, uuid) => {
+    if (urn || uuid) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  .reply(201, {text: 'Updated'});
+
+
+describe('RapidPro', () => {
+  describe('Groups', () => {
+    test('Can get a group', () => {
+      return services
+        .getGroup(groupUUID)
+        .then((data) => expect(data).toEqual({text: 'Got'}));
     });
   });
 
-  context('Ona', () => {
-    describe('postSubmissiontoona', () => {
-      it('can post submission to Ona', () => {
+  describe('Contacts', () => {
+    describe('updateRapidProContact', () => {
+      test('can be updated via a urn', () => {
         return services
-          .genAndPostSubmissionToOna(
-            conversation,
-            {
-              name: 'Jane Doe',
-              idString: '23f23wre-ewe',
-            },
-            `${baseURL}/ona-submission`
-          )
-          .should.eventually.equal('Created');
+          .updateUser({urn: 'facebook:1234'}, {language: 'ind'})
+          .then((data) => expect(data).toEqual({text: 'Updated'}));
+      });
+
+      test('can be updated via a uuid', () => {
+        return services
+          .updateUser({uuid: '232e4-dssdc-q32322-2323ed'}, {language: 'ind'})
+          .then((data) => expect(data).toEqual({text: 'Updated'}));
       });
     });
   });
-}
+});
 
-module.exports = testServices;
+
+describe('Ona', () => {
+  test('can post submission to Ona', () => {
+    return services
+      .genAndPostSubmissionToOna(
+        conversation,
+        {
+          name: 'Jane Doe',
+          idString: '23f23wre-ewe',
+        },
+        `${onaBaseURL}/orgname/ona-submission`
+      )
+      .then((data) => expect(data).toEqual({text: 'Created'}));
+  });
+});

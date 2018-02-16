@@ -5,12 +5,15 @@ const assert = require('assert');
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
+const time = new Date();
 const user = 1234567;
 const unixTimestamp = 1507807496394;
 const conversation = {
   context: {
     user,
   },
+  startTime: time,
+  lastActive: time,
   responses: {
     playWithShopToys: {
       text: 'yes',
@@ -85,3 +88,7 @@ describe('genOnaSubmission', () => {
   it('generates repeat groups in general');
   it('is not a convoluted mess');
 });
+
+module.exports = {
+  conversation
+};
