@@ -1,11 +1,5 @@
 /* eslint require-jsdoc: "off" */
 const HTTP = require('../lib/HTTP.js');
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
-
-const baseURL = 'http://localhost:4000';
-chai.use(chaiAsPromised);
-chai.should();
 
 function testHTTP() {
   describe('test request', () => {

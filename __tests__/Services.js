@@ -1,13 +1,7 @@
 /* eslint require-jsdoc: "off" */
-const chai = require('chai');
-const chaiAsPromised = require('chai-as-promised');
 const services = require('../lib/Services.js');
 const {conversation} = require('./Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
-
-const baseURL = 'http://localhost:4000';
-chai.use(chaiAsPromised);
-chai.should();
 
 const userProfile = {
   first_name: 'John',
