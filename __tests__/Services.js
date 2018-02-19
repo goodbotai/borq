@@ -42,13 +42,12 @@ rapidPro
   })
   .reply(201, {text: 'Updated'});
 
-
 describe('RapidPro', () => {
   describe('Groups', () => {
     test('Can get a group', () => {
       return services
         .getGroup(groupUUID)
-        .then((data) => expect(data).toEqual({text: 'Got'}));
+        .then(({body}) => expect(body).toEqual({text: 'Got'}));
     });
   });
 
@@ -57,13 +56,13 @@ describe('RapidPro', () => {
       test('can be updated via a urn', () => {
         return services
           .updateUser({urn: 'facebook:1234'}, {language: 'ind'})
-          .then((data) => expect(data).toEqual({text: 'Updated'}));
+          .then(({body}) => expect(body).toEqual({text: 'Updated'}));
       });
 
       test('can be updated via a uuid', () => {
         return services
           .updateUser({uuid: '232e4-dssdc-q32322-2323ed'}, {language: 'ind'})
-          .then((data) => expect(data).toEqual({text: 'Updated'}));
+          .then(({body}) => expect(body).toEqual({text: 'Updated'}));
       });
     });
   });
