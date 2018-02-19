@@ -2979,6 +2979,10 @@ load-json-file@^1.0.0:
     pinkie-promise "^2.0.0"
     strip-bom "^2.0.0"
 
+loadash@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/loadash/-/loadash-1.0.0.tgz#b92e54d809f3c225f4f9a9cfbaeae5b56de1ca9f"
+
 localtunnel@^1.8.2:
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/localtunnel/-/localtunnel-1.8.3.tgz#dcc5922fd85651037d4bde24fd93248d0b24eb05"
@@ -3664,6 +3668,13 @@ range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
+rapidpro-js@^0.0.1-alpha.2:
+  version "0.0.1-alpha.2"
+  resolved "https://registry.yarnpkg.com/rapidpro-js/-/rapidpro-js-0.0.1-alpha.2.tgz#5a0d960d2274863ab786e123578a46053e82e02e"
+  dependencies:
+    loadash "^1.0.0"
+    superagent "^3.8.2"
+
 raven@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/raven/-/raven-2.1.2.tgz#4aa7a72c4b3061d7fde06bfc62d669a74a651e27"
@@ -4295,7 +4306,7 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
-superagent@^3.0.0:
+superagent@^3.0.0, superagent@^3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.2.tgz#e4a11b9d047f7d3efeb3bbe536d9ec0021d16403"
   dependencies:
