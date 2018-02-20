@@ -49,6 +49,10 @@ describe('test lookupCountry', () => {
   test('successfully looks up by locale', () => {
     expect(utils.lookupCountry({locale: 'pt_BR'})).toBe('Brazil');
   });
+  test('Falls backt to locale when timezone fails', () => {
+    expect(utils.lookupCountry({timezone: undefined, locale: 'pt_BR'})).toBe('Brazil');
+    expect(utils.lookupCountry({timezone: 0, locale: 'id_ID'})).toBe('Indonesia');
+  });
   test('throws an exception when the country does not exist', () => {
     let badObj = {timezone: undefined, locale: undefined};
     expect(() => utils.lookupCountry(badObj)).toThrow(Error);

@@ -1,9 +1,10 @@
 None of these vars is required by themselves but you need to set a few of
 them to create a functioning bot.
 
-|        Environment variable      |                                     Descpription                                           |         Default         |
-|:--------------------------------:|:------------------------------------------------------------------------------------------:|:-----------------------:|
+|        Environment variable      |                                     Descpription                                           |                Default             |
+|:--------------------------------:|:------------------------------------------------------------------------------------------:|:----------------------------------:|
 |NODE_ENV                          |test, dev and production                                                                    |'dev'                               |
+|DEBUG                             |To run in debug mode or not                                                                 |false                               |
 |DEAFULT_LANGUAGE (ISO 639-1 Code) |The language you want the bot to communicate in.                                            |'en'                                |
 |HOST_PORT (docker)                |Container port in the host                                                                  |undefined                           |
 |APP_PORT (docker)                 |App port in the container                                                                   |3000                                |
