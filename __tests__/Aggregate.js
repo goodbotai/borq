@@ -1,7 +1,5 @@
 /* eslint require-jsdoc: "off" */
 /* eslint max-len: ["error", { "code": 100 }]*/
-const assert = require('assert');
-
 const aggregate = require('../lib/Aggregate.js');
 const utils = require('../lib/utils/Utils.js');
 
@@ -84,5 +82,5 @@ describe('genOnaSubmission', () => {
 });
 
 module.exports = {
-  conversation
+  conversation,
 };

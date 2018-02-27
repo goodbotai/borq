@@ -1,5 +1,4 @@
 /* eslint require-jsdoc: "off" */
-const assert = require('assert');
 const utils = require('../../lib/utils/Locales.js');
 
 describe('test extractLanguageFromLocale', () => {
@@ -27,7 +26,7 @@ describe('test lookupISO6392', () => {
 });
 
 describe('test regionByTimeZone', () => {
-  test(`returns a language in ISO6392 given a timezone`, () => {
+  test('returns a language in ISO6392 given a timezone', () => {
     expect(utils.regionByTimeZone(-3)).toBe('por');
     expect(utils.regionByTimeZone(1)).toBe('default');
     expect(utils.regionByTimeZone(4)).toBe('ind');
@@ -35,7 +34,7 @@ describe('test regionByTimeZone', () => {
 });
 
 describe('test pickLanguage', () => {
-  test(`return language in ISO6392 given locale, timezone or both`, () => {
+  test('return language in ISO6392 given locale, timezone or both', () => {
     expect(utils.pickLanguage({locale: 'en_GB'})).toBe('eng');
     expect(utils.pickLanguage({timezone: 5})).toBe('ind');
     expect(utils.pickLanguage({timezone: -4})).toBe('por');
@@ -50,8 +49,12 @@ describe('test lookupCountry', () => {
     expect(utils.lookupCountry({locale: 'pt_BR'})).toBe('Brazil');
   });
   test('Falls backt to locale when timezone fails', () => {
-    expect(utils.lookupCountry({timezone: undefined, locale: 'pt_BR'})).toBe('Brazil');
-    expect(utils.lookupCountry({timezone: 0, locale: 'id_ID'})).toBe('Indonesia');
+    expect(utils.lookupCountry({timezone: undefined, locale: 'pt_BR'})).toBe(
+      'Brazil'
+    );
+    expect(utils.lookupCountry({timezone: 0, locale: 'id_ID'})).toBe(
+      'Indonesia'
+    );
   });
   test('throws an exception when the country does not exist', () => {
     let badObj = {timezone: undefined, locale: undefined};
