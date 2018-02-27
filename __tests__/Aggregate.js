@@ -31,7 +31,7 @@ const conversation = {
 const date = new Date(unixTimestamp);
 const aggregated = aggregate.aggregate(conversation);
 const onaSubmission = aggregate.genOnaSubmission(aggregated);
-const instanceID = onaSubmission.submission.meta.instanceID;
+// const instanceID = onaSubmission.submission.meta.instanceID;
 
 describe('aggregate', () => {
   it('returns an object containing a user ID under psid', () => {
@@ -75,14 +75,9 @@ describe('genOnaSubmission', () => {
       submission: {
         playWithShopToys: 'yes',
         playWithShopToysTimeStamp: date,
-        meta: {instanceID},
       },
     };
     expect(onaSubmission).toEqual(expected);
-  });
-
-  it('has an instance id for each submission', () => {
-    expect(instanceID);
   });
 
   it('generates repeat groups in general');
