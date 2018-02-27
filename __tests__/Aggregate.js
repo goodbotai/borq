@@ -31,7 +31,6 @@ const conversation = {
 const date = new Date(unixTimestamp);
 const aggregated = aggregate.aggregate(conversation);
 const onaSubmission = aggregate.genOnaSubmission(aggregated);
-// const instanceID = onaSubmission.submission.meta.instanceID;
 
 describe('aggregate', () => {
   it('returns an object containing a user ID under psid', () => {
