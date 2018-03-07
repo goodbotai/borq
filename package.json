@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/goodbotai/borq",
   "dependencies": {
-    "botkit": "0.6.6",
+    "botkit": "0.6.11",
     "express-winston": "^2.4.0",
     "i18next": "^9.1.0",
     "i18next-node-fs-backend": "^1.0.0",
