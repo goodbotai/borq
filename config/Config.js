@@ -39,6 +39,10 @@ module.exports = {
 
   // logging and error reporting
   sentryDSN: env.SENTRY_DSN,
+  hostname: env.HOSTNAME || 'borq',
+  facility: env.FACILITY || 'localhost',
+  graylogHost: env.GRAYLOG_HOST,
+  graylogPort: env.GRAYLOG_PORT,
   karmaAccessLogFile: env.KARMA_ACCESS_LOG_FILE || 'bot.access.log',
   debugTranslations: env.DEBUG_TRANSLATIONS === 'true' || false,
 };
