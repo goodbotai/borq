@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>config/Config.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Deploying.html">Deploying</a></li><li class="nav-item"><a href="tutorial-Environment Variables.html">Environment Variables</a></li><li class="nav-item"><a href="tutorial-Facebook.html">Facebook</a></li><li class="nav-item"><a href="tutorial-Persistence.html">Persistence</a></li><li class="nav-item"><a href="tutorial-Testing.html">Testing</a></li><li class="nav-item"><a href="tutorial-Translations.html">Translations</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-aggregate.html">aggregate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~aggregate">aggregate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~extractTimeStamps">extractTimeStamps</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~genOnaSubmission">genOnaSubmission</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~removeIntros">removeIntros</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-borq.html">borq</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-config.html">config</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-conversations.html">conversations</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~conversationSwitch">conversationSwitch</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~goto">goto</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~nextConversation">nextConversation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~sendMessage">sendMessage</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-facebook.html">facebook</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~getFacebookProfile">getFacebookProfile</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setGetStarted">setGetStarted</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setGreeting">setGreeting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setMenu">setMenu</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~start">start</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-facebookUtils.html">facebookUtils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateButtonObject">generateButtonObject</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateButtonTemplate">generateButtonTemplate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateQuickReply">generateQuickReply</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-http.html">http</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~extractResponseBody">extractResponseBody</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~processResponse">processResponse</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~request">request</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-localeUtils.html">localeUtils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~extractLanguageFromLocale">extractLanguageFromLocale</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~extractRegionFromLocale">extractRegionFromLocale</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupCountry">lookupCountry</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupISO6391">lookupISO6391</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupISO6392">lookupISO6392</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~pickLanguage">pickLanguage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~regionByTimeZone">regionByTimeZone</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-logger.html">logger</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~log">log</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~logRejectedPromise">logRejectedPromise</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~setupSentry">setupSentry</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-services.html">services</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-translations.html">translations</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-translations.html#~generateNameSpaces">generateNameSpaces</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-translations.html#~translateiUsing18next">translateiUsing18next</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-utils.html">utils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~getKeyByValue">getKeyByValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~getObjectFromObjectArray">getObjectFromObjectArray</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~isValueInObject">isValueInObject</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~mergeObjects">mergeObjects</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="services.module_ona.html">ona</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="services.module_ona.html#~genAndPostSubmissionToOna">genAndPostSubmissionToOna</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="services.module_ona.html#~postSubmissionToOna">postSubmissionToOna</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">config/Config.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/** @module config */
+const env = process.env;
+
+/**
+ * Configuration options for the bot
+ * @constant
+ * @type {object}
+ */
+module.exports = {
+  // core
+  environment: env.NODE_ENV || 'development', // dev, prod, test
+  PORT: env.PORT || env.APP_PORT || 3000, // env to run karma on
+  defaultLanguage: env.DEFAULT_LANGUAGE || 'en',
+  translationsDir: env.TRANSLATIONS_DIR || './translations',
+  debug: env.DEBUG || false,
+
+  // milliseconds per min * number of mins
+  conversationTimeout: env.CONVERSATION_TIMEOUT || 60000 * 20,
+
+  // facebook
+  facebookPageAccessToken: env.FACEBOOK_PAGE_ACCESS_TOKEN,
+  facebookAppSecret: env.FACEBOOK_APP_SECRET,
+  facebookApiVersion: env.FACEBOOK_API_VERSION || 'v2.10',
+  facebookVerifyToken: env.FACEBOOK_VERIFY_TOKEN || 'borq',
+  facebookApiHost:
+    env.FACEBOOK_API_HOST || /test\w*/i.test(env.NODE_ENV)
+      ? 'http://256.256.256.256'
+      : undefined,
+
+  // external data stores
+  onaOrg: env.ONA_USERNAME,
+  onaFormIds: env.ONA_FORM_IDS ? JSON.parse(env.ONA_FORM_IDS) : {},
+  onaApiToken: env.ONA_API_TOKEN,
+  rapidproApiToken: env.RAPIDPRO_API_TOKEN,
+  rapidproGroups: env.RAPIDPRO_GROUPS ? JSON.parse(env.RAPIDPRO_GROUPS) : {},
+  deletedUserGroups: env.DELETED_USER_RAPIDPRO_GROUPS
+    ? JSON.parse(env.DELETED_USER_RAPIDPRO_GROUPS)
+    : {},
+
+  // logging and error reporting
+  sentryDSN: env.SENTRY_DSN,
+  hostname: env.HOSTNAME || 'borq',
+  facility: env.FACILITY || 'localhost',
+  graylogHost: env.GRAYLOG_HOST,
+  graylogPort: env.GRAYLOG_PORT,
+  karmaAccessLogFile: env.KARMA_ACCESS_LOG_FILE || 'bot.access.log',
+  debugTranslations: env.DEBUG_TRANSLATIONS === 'true' || false,
+};
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Mar 27 2018 10:00:40 GMT+0000 (UTC) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

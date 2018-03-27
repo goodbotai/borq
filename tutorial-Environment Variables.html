@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Environment Variables - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Deploying.html">Deploying</a></li><li class="nav-item"><a href="tutorial-Environment Variables.html">Environment Variables</a></li><li class="nav-item"><a href="tutorial-Facebook.html">Facebook</a></li><li class="nav-item"><a href="tutorial-Persistence.html">Persistence</a></li><li class="nav-item"><a href="tutorial-Testing.html">Testing</a></li><li class="nav-item"><a href="tutorial-Translations.html">Translations</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-aggregate.html">aggregate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~aggregate">aggregate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~extractTimeStamps">extractTimeStamps</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~genOnaSubmission">genOnaSubmission</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-aggregate.html#~removeIntros">removeIntros</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-borq.html">borq</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-config.html">config</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-conversations.html">conversations</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~conversationSwitch">conversationSwitch</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~goto">goto</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~nextConversation">nextConversation</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-conversations.html#~sendMessage">sendMessage</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-facebook.html">facebook</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~getFacebookProfile">getFacebookProfile</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setGetStarted">setGetStarted</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setGreeting">setGreeting</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~setMenu">setMenu</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebook.html#~start">start</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-facebookUtils.html">facebookUtils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateButtonObject">generateButtonObject</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateButtonTemplate">generateButtonTemplate</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-facebookUtils.html#~generateQuickReply">generateQuickReply</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-http.html">http</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~extractResponseBody">extractResponseBody</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~processResponse">processResponse</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-http.html#~request">request</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-localeUtils.html">localeUtils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~extractLanguageFromLocale">extractLanguageFromLocale</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~extractRegionFromLocale">extractRegionFromLocale</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupCountry">lookupCountry</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupISO6391">lookupISO6391</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~lookupISO6392">lookupISO6392</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~pickLanguage">pickLanguage</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-localeUtils.html#~regionByTimeZone">regionByTimeZone</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-logger.html">logger</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~log">log</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~logRejectedPromise">logRejectedPromise</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-logger.html#~setupSentry">setupSentry</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-services.html">services</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-translations.html">translations</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-translations.html#~generateNameSpaces">generateNameSpaces</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-translations.html#~translateiUsing18next">translateiUsing18next</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-utils.html">utils</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~getKeyByValue">getKeyByValue</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~getObjectFromObjectArray">getObjectFromObjectArray</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~isValueInObject">isValueInObject</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-utils.html#~mergeObjects">mergeObjects</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="services.module_ona.html">ona</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="services.module_ona.html#~genAndPostSubmissionToOna">genAndPostSubmissionToOna</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="services.module_ona.html#~postSubmissionToOna">postSubmissionToOna</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Environment Variables</h1>
+    
+
+    <section>
+
+<header>
+    
+</header>
+
+<article>
+    <p>None of these vars is required by themselves but you need to set a few of
+them to create a functioning bot.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Environment variable</th>
+<th style="text-align:center">Descpription</th>
+<th style="text-align:center">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">NODE_ENV</td>
+<td style="text-align:center">test, dev and production</td>
+<td style="text-align:center">'dev'</td>
+</tr>
+<tr>
+<td style="text-align:center">DEBUG</td>
+<td style="text-align:center">To run in debug mode or not</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">DEAFULT_LANGUAGE (ISO 639-1 Code)</td>
+<td style="text-align:center">The language you want the bot to communicate in.</td>
+<td style="text-align:center">'en'</td>
+</tr>
+<tr>
+<td style="text-align:center">HOST_PORT (docker)</td>
+<td style="text-align:center">Container port in the host</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">APP_PORT (docker)</td>
+<td style="text-align:center">App port in the container</td>
+<td style="text-align:center">3000</td>
+</tr>
+<tr>
+<td style="text-align:center">PORT</td>
+<td style="text-align:center">Port that your bot is listening on. If in docker APP_PORT = PORT</td>
+<td style="text-align:center">3000</td>
+</tr>
+<tr>
+<td style="text-align:center">ONA_USERNAME</td>
+<td style="text-align:center">Ona user or organization username</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">ONA_FORM_IDS</td>
+<td style="text-align:center">JSON Object of Ona form ID strings. We use it to identify the form to make submissins to.</td>
+<td style="text-align:center">{}</td>
+</tr>
+<tr>
+<td style="text-align:center">ONA_API_TOKEN</td>
+<td style="text-align:center">API token provided by Ona. Required if sending data to Ona.</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">RAPIDPRO_API_TOKEN</td>
+<td style="text-align:center">API token provided by Rapidpro. Required if creating or updating RapidPro contacts.</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">RAPIDPRO_GROUPS</td>
+<td style="text-align:center">JSON Object of keys to Rapidpro group UUIDs that your users should be added to</td>
+<td style="text-align:center">{}</td>
+</tr>
+<tr>
+<td style="text-align:center">DELETED_USER_RAPIDPRO_GROUPS</td>
+<td style="text-align:center">JSON Object of keys to Rapidpro group UUIDs that your users should be moved to</td>
+<td style="text-align:center">{}</td>
+</tr>
+<tr>
+<td style="text-align:center">SENTRY_DSN</td>
+<td style="text-align:center">DSN provided by Sentry</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">ACCESS_LOG_FILE</td>
+<td style="text-align:center">File to store access logs</td>
+<td style="text-align:center">bot.access.log</td>
+</tr>
+<tr>
+<td style="text-align:center">DEBUG_TRANSLATIONS</td>
+<td style="text-align:center">Whether to turn off or on translations debugging</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td style="text-align:center">TRANSLATIONS_DIR</td>
+<td style="text-align:center">Path to the dir holding the translations files.</td>
+<td style="text-align:center">'./translations'</td>
+</tr>
+<tr>
+<td style="text-align:center">FACEBOOK_VERIFY_TOKEN</td>
+<td style="text-align:center">Token used to verify your app to the webhooks endpoint listens on /facebook/recieve</td>
+<td style="text-align:center">'borq'</td>
+</tr>
+<tr>
+<td style="text-align:center">FACEBOOK_APP_SECRET</td>
+<td style="text-align:center">Facebook provided app secret. Required for Messenger.</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">FACEBOOK_API_HOST</td>
+<td style="text-align:center">Set the api_host. In testing <code>http://256.256.256.256</code> in any other env <code>undefined</code></td>
+<td style="text-align:center">undefined or http://256.256.256.256</td>
+</tr>
+<tr>
+<td style="text-align:center">CONVERSATION_TIMEOUT</td>
+<td style="text-align:center">Time to wait for a user to respond (in milliseconds).</td>
+<td style="text-align:center">60000 * 20 (20 mins)</td>
+</tr>
+<tr>
+<td style="text-align:center">FACEBOOK_PAGE_ACCESS_TOKEN</td>
+<td style="text-align:center">Facebook provided token needed to post as a page. Required for Messenger.</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">FACEBOOK_API_VERSION</td>
+<td style="text-align:center">The version of the facebook API to use when making Facebook API calls.</td>
+<td style="text-align:center">'v2.10'</td>
+</tr>
+<tr>
+<td style="text-align:center">GRAYLOG_HOST</td>
+<td style="text-align:center">Graylog server address</td>
+<td style="text-align:center">'localhost'</td>
+</tr>
+<tr>
+<td style="text-align:center">GRAYLOG_PORT</td>
+<td style="text-align:center">Graylog server port</td>
+<td style="text-align:center">12201</td>
+</tr>
+<tr>
+<td style="text-align:center">FACILITY</td>
+<td style="text-align:center">Application or container specific identifying string</td>
+<td style="text-align:center">'localhost'</td>
+</tr>
+<tr>
+<td style="text-align:center">HOSTNAME</td>
+<td style="text-align:center">The name of the host</td>
+<td style="text-align:center">'borq'</td>
+</tr>
+</tbody>
+</table>
+<p>examples:</p>
+<pre class="prettyprint source lang-bash"><code>$ export DELETED_USER_RAPIDPRO_GROUPS=&quot;{\&quot;del\&quot;: \&quot;l0ng-gr0up-n4m3-uu1d\&quot;}&quot;
+$ export RAPIDPRO_GROUPS=&quot;{\&quot;ind\&quot;: \&quot;l0ng-gr0up-n4m3-uu1d\&quot;, \&quot;por\&quot;: \&quot;l0ng-gr0up-n4m3-uu1d\&quot;, \&quot;default\&quot;: \&quot;l0ng-gr0up-n4m3-uu1d\&quot;}&quot;
+$ export ONA_FORM_IDS=&quot;{\&quot;caregiverKnowledge\&quot;: \&quot;aKRKGasdcr343434vPN\&quot;, \&quot;FCI\&quot;: \&quot;FCI\&quot;, \&quot;srq20 \&quot;: \&quot;arfwer333423we\&quot;}&quot;</code></pre>
+</article>
+
+</section>
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Tue Mar 27 2018 10:00:40 GMT+0000 (UTC) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
